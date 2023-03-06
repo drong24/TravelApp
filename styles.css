@@ -35,16 +35,11 @@ html, body{
     z-index: -1;
 }
 .index_title{
-    animation: fadeIn 5s;
+    animation: fadeIn_title 5s;
     color:aliceblue;
     font-family: fantasy;
 }
 .menu {
-    opacity: 0;
-    animation: fadeIn 4.4s;
-    animation-fill-mode: forwards;
-    -ms-zoom-animation: fadeIn 5s;
-    animation-delay: 1.4s;
     color:aliceblue;
     font-size: 14px;
     font-family: fantasy;
@@ -54,7 +49,43 @@ html, body{
     align-items: center;
 }
 
-@keyframes fadeIn {
+.menu_item1 {
+    opacity: 0;
+    animation: fadeIn_menu 2s;
+    animation-delay: 3.4s;
+    animation-fill-mode: forwards;
+}
+.menu_item2 {
+    opacity: 0;
+    animation: fadeIn_menu 2s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+.menu_item3 {
+    opacity: 0;
+    animation: fadeIn_menu 2s;
+    animation-delay: 3.8s;
+    animation-fill-mode: forwards;
+}
+.menu_item4 {
+    opacity: 0;
+    animation: fadeIn_menu 2s;
+    animation-delay: 3.6s;
+    animation-fill-mode: forwards;
+
+}
+.menu_item5 {
+    opacity: 0;
+    animation: fadeIn_menu 2s;
+    animation-delay: 3.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn_title {
     0% {opacity: 0;}
     100% {opacity: 1;}
+}
+@keyframes fadeIn_menu {
+    0% {opacity: 0; transform: translateY(100%);}
+    100% {opacity: 1; transform: translateY(0);}
 }
