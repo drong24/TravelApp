@@ -17,7 +17,7 @@ html, body{
     align-items: center;
     justify-content: center;
     row-gap: 50px;
-    background-image: url(./pictures/tokyo-spring.jpeg);
+    background-image: url(./pictures/sunset-sky.jpeg);
     background-size: cover;
     background-position: top center;
     position: relative;
@@ -30,18 +30,34 @@ html, body{
     top: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(222, 184, 135, 0.887);
-    opacity: .27;
+    background-color: burlywood;
+    opacity: .3;
     z-index: -1;
 }
 .index_title{
+    animation: fadeIn 5s;
     color:aliceblue;
+    font-family: fantasy;
 }
 .menu {
+    opacity: 0;
+    animation: fadeIn 5s;
+    -ms-zoom-animation: fadeIn 5s;
+    animation-delay: 1.4s;
     color:aliceblue;
     font-size: 14px;
+    font-family: fantasy;
     display: flex;
     justify-content: center;
     gap: 15px;
     align-items: center;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes slideUp {
+    0% {margin-bottom: 100%;}
+    100% {margin-bottom: 0%;}
 }
