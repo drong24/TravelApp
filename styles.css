@@ -98,10 +98,12 @@ a {
     align-items: center;
     animation: slide_up 1s;
     animation-fill-mode: forwards;
+    z-index: 2;
 }
 .title {
-    animation: slide_up_title 1s;
-    animation-fill-mode: forwards;
+    /*animation: slide_up_title 1s;
+    animation-fill-mode: forwards;*/
+    z-index: 2;
 }
 @keyframes slide_up {
     from {transform: translateY(0);}
@@ -111,9 +113,20 @@ a {
     from {transform: translateY(0);}
     to {transform: translateY(-250px);}
 }
+
 .content{
     z-index: 1;
+    width: 500px;
+    height: 400px;
+    animation: content_fade 1s;
+    animation-fill-mode: forwards;
 }
+
+@keyframes content_fade {
+    from {opacity: 0; transform: translateY(15px);}
+    to {opacity: 100%; transform: translateY(0px);}
+}
+
 .journal_button {
     background-color: brown;
     border: none;
