@@ -1,5 +1,5 @@
 * {
-    /*border: 1px solid red;*/
+    border: 1px solid red;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -8,7 +8,6 @@
 }
 html, body{
     font-size: 10px;
-    color: black;
 }
 a {
     color: inherit;
@@ -106,9 +105,19 @@ a {
 }
 @keyframes slide_up {
     from {transform: translateY(0);}
-    to {transform: translateY(-250px);}
+    to {transform: translateY(-200px);}
 }
 @keyframes slide_up_title {
     from {transform: translateY(0);}
-    to {transform: translateY(-300px);}
+    to {transform: translateY(-250px);}
+}
+.content{
+    z-index: 1;
+}
+.journal_button {
+    background-color: brown;
+    border: none;
+    color: white;
+    padding: 3px;
+    border-radius: 8px;
 }
