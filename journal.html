@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journal</title>
     <link rel="stylesheet" href="./styles.css"> 
+    <script src="./script.js"></script>
 </head>
 <body>
     <div class="index">
@@ -19,8 +20,9 @@
             <a class="title" href="./index.html">TravelApp</a>
         <div class="content">
             <button class="journal_button">+ Add Entry</button>
-            <textarea class="journal_entry"></textarea>
-            <button class="journal_button" type="submit">Save</button>
+            <textarea class="journal_entry" id="txtIn"></textarea>
+            <button onclick ="getRs()" class="journal_button" type="submit">Save</button>
+            <div id="entry"></div>
         </div>
     </div>
 

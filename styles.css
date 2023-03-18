@@ -1,5 +1,5 @@
 * {
-    /*border: 1px solid red;*/
+    border: 1px solid red;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -142,4 +142,16 @@ a {
     color: white;
     padding: 3px;
     border-radius: 8px;
+}
+
+textarea {
+    width: 400px;
+    height: 100px;
+   background: transparent;
+   color: aliceblue;
+}
+
+#entry {
+    width: 400px;
+    height: 100px;
 }
