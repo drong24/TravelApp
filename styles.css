@@ -1,5 +1,5 @@
 * {
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -121,11 +121,13 @@ a {
 }
 
 .content{
+    opacity: 0;
     margin: 20px;
     z-index: 2;
     height: 40%;
     position: fixed;
-    animation: content_fade 1s;
+    animation: content_fade .5s;
+    animation-delay: .5s;
     animation-fill-mode: forwards;
 }
 
