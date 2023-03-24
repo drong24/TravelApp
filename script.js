@@ -10,5 +10,11 @@ function getRs() {
     <small class="dateTime">${date.toLocaleTimeString()}, 
     ${date.toLocaleDateString()}</small?</div>`
     document.getElementById('txtIn').remove()
+    document.getElementById('saveButton').remove()
 
+}
+
+function addText() {
+    getTxt('enter').innerHTML = `<div><textarea class="journal_entry" id="txtIn"></textarea>
+    <button onclick ="getRs()" class="journal_button" id="saveButton" type="submit">Save</button></div>`
 }
