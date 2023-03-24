@@ -129,6 +129,9 @@ a {
     animation: content_fade .5s;
     animation-delay: .5s;
     animation-fill-mode: forwards;
+    align-items: center;
+    height: auto;
+    width: auto;
 }
 
 @keyframes content_fade {
@@ -147,7 +150,7 @@ a {
 textarea {
     width: 400px;
     height: 100px;
-   background: transparent;
+   background: azure;
    color: aliceblue;
 }
 
