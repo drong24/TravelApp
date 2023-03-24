@@ -150,11 +150,17 @@ a {
 textarea {
     width: 400px;
     height: 100px;
-   background: azure;
-   color: aliceblue;
+   background-color: black;
 }
 
 #entry {
     width: 400px;
     height: 100px;
+}
+
+.card {
+    padding: 0.5rem 1rem;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    margin: .3rem 0;
 }
