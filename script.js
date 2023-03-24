@@ -7,7 +7,7 @@ function getRs() {
     const date = new Date()
 
     getTxt('entry').innerHTML += `<div class="card"><p>${txtIn.value}</p>
-    <small>${date.toLocaleTimeString()}, 
+    <small class="dateTime">${date.toLocaleTimeString()}, 
     ${date.toLocaleDateString()}</small?</div>`
     document.getElementById('txtIn').remove()
 

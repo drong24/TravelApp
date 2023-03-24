@@ -156,6 +156,7 @@ textarea {
 #entry {
     width: 400px;
     height: 100px;
+    font-size: small;
 }
 
 .card {
@@ -164,3 +165,8 @@ textarea {
     border-radius: 3px;
     margin: .3rem 0;
 }
+
+.dateTime {
+   color: rgb(254, 209, 161);
+}
+
