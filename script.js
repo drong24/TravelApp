@@ -9,7 +9,7 @@ function getRs() {
 
     getTxt('entry').innerHTML += `<div class="card"><p>${txtIn.value}</p>
     <small class="dateTime">${date.toLocaleTimeString()}, 
-    ${date.toLocaleDateString()}</small?</div>`
+    ${date.toLocaleDateString()}</small></div>`
     txt.value = '';
     addText()
 

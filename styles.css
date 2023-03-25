@@ -1,5 +1,5 @@
 * {
-    border: 1px solid red;
+   /* border: 1px solid red;*/
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -148,9 +148,12 @@ a {
 }
 
 textarea {
+    border: brown solid 2px;
     width: 400px;
     height: 100px;
-   background-color: rgb(179, 114, 46);
+   color: aliceblue;
+   background: transparent;
+   
 }
 
 #entry {
