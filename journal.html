@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./styles.css"> 
     <script src="./script.js"></script>
 </head>
-<body>
+<body onload="addText()">
     <div class="index">
         <nav class="menu">
             <a class="menu_item1" > Itinerary</a>
@@ -20,7 +20,10 @@
             <a class="title" href="./index.html">TravelApp</a>
         <div class="content">
             <button onclick="addText()" class="journal_button">+ Add Entry</button>
-            <div id="enter"></div>
+            <div id="enter">
+                <textarea class="journal_entry" id="txtIn"></textarea>
+                <button onclick ="getRs()" class="journal_button" id="saveButton" type="submit">Save</button>
+            </div>
             <div id="entry"></div>
         </div>
     </div>
