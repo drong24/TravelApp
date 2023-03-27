@@ -5,6 +5,7 @@
     box-sizing: border-box;
     color:aliceblue;
     font-family: fantasy;
+    
 }
 html, body{
     font-size: 10px;
@@ -173,3 +174,6 @@ textarea {
    color: rgb(254, 209, 161);
 }
 
+#entry {
+    white-space: pre-wrap;
+}
