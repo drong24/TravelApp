@@ -140,7 +140,7 @@ a {
     to {opacity: 100%; transform: translateY(0px);}
 }
 
-.journal_button {
+.small__button {
     background-color: brown;
     border: none;
     color: white;
@@ -176,4 +176,19 @@ textarea {
 
 #entry {
     white-space: pre-wrap;
+}
+
+.enter p{
+font-size: small;
+}
+.budget_entry {
+    width: fit-content;
+    height: 30px;
+}
+.budget_catag {
+    width: fit-content;
+    height: 30px;
+}
+.add_expense {
+
 }
