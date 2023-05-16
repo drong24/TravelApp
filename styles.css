@@ -14,6 +14,11 @@ a {
     color: inherit;
     text-decoration: inherit;
 }
+select {
+    border: brown solid 2px;
+    background: transparent;
+    color: aliceblue; 
+}
 .index {
     font-size: 32px;
     min-height: 100vh;
@@ -193,3 +198,4 @@ display: flex;
 .add_expense {
 
 }
+
