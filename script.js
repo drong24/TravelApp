@@ -1,3 +1,8 @@
+var Lodging = 0;
+var Transportation = 0;
+var Food = 0;
+var Others = 0;
+
 
 function getTxt(id) {
     return document.getElementById(id)
@@ -36,11 +41,15 @@ function addExp() {
     `<div class="card"><p>${catagory.value}</p>
     <p>${amount.value}</p>
     <small class="dateTime">${date.value}</small></div>`
+    
     amount.value = '';
     catagory.value = '';
     date.value = '';
 
+    //add script to add amount to chosen catagory 
+
     console.log(amount);
     console.log(catagory);
     console.log(date);
+    console.log(Lodging);
 }
