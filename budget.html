@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./styles.css"> 
     <script src="./script.js"></script>
 </head>
-<body onload="addText()">
+<body>
     <div class="index">
         <nav class="menu">
             <a class="menu_item1" > Itinerary</a>
@@ -24,10 +24,17 @@
             </div>
             <div class="bueget_items">
                 <div class="enter">
-                    <p>Amount</p><textarea class="budget_entry"></textarea>
-                    <p>Catagory</p><textarea class="budget_catag"></textarea>
-                    <p>Date</p><textarea class="budget_catag"></textarea>
-                    <button class="small__button">Add Expense</button>
+                    <label>Catagory</label>          
+                    <select class="budget_catag">
+                        <option></option>
+                        <option>Lodging</option>
+                        <option>Transportation</option>
+                        <option>Food</option>
+                        <option>Others</option>
+                    </select>     
+                    <label>Amount</label><textarea class="budget_entry"></textarea>
+                    <label>Date</label><textarea class="budget_date"></textarea>
+                    <button class="budget_button small__button" onclick="addExp()">Add Expense</button>
                 </div>
                 <div class="budget_entry">
                     
@@ -38,4 +45,3 @@
     </div>
 
 </body>
-</html>

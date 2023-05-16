@@ -140,7 +140,7 @@ a {
     to {opacity: 100%; transform: translateY(0px);}
 }
 
-.small__button {
+.small_button {
     background-color: brown;
     border: none;
     color: white;
@@ -178,16 +178,17 @@ textarea {
     white-space: pre-wrap;
 }
 
-.enter p{
+.enter label{
 font-size: small;
+display: flex;
 }
 .budget_entry {
-    width: fit-content;
-    height: 30px;
+    width: 100px;
+    height: 25px;
 }
-.budget_catag {
-    width: fit-content;
-    height: 30px;
+.budget_date {
+    width: 100px;
+    height: 25px;
 }
 .add_expense {
 

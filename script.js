@@ -27,6 +27,15 @@ function addText() {
 
 }
 
-function budget() {
+function addExp() {
+    const amount = document.querySelector('.budget_entry').value;
+    const catagory = document.querySelector('.budget_catag').value;
+    const date = document.querySelector('.budget_date').value;
     
+    document.querySelector('.budget_entry').innerHTML += 
+        `<div> </div>`
+
+    console.log(amount);
+    console.log(catagory);
+    console.log(date);
 }
