@@ -187,7 +187,7 @@ textarea {
 font-size: small;
 display: flex;
 }
-.budget_entry {
+.budget_amount {
     width: 100px;
     height: 25px;
 }

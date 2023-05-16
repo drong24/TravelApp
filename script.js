@@ -28,12 +28,17 @@ function addText() {
 }
 
 function addExp() {
-    const amount = document.querySelector('.budget_entry').value;
-    const catagory = document.querySelector('.budget_catag').value;
-    const date = document.querySelector('.budget_date').value;
+    const amount = document.querySelector('.budget_amount');
+    const catagory = document.querySelector('.budget_catag');
+    const date = document.querySelector('.budget_date');
     
     document.querySelector('.budget_entry').innerHTML += 
-        `<div> </div>`
+    `<div class="card"><p>${catagory.value}</p>
+    <p>${amount.value}</p>
+    <small class="dateTime">${date.value}</small></div>`
+    amount.value = '';
+    catagory.value = '';
+    date.value = '';
 
     console.log(amount);
     console.log(catagory);
