@@ -183,6 +183,9 @@ textarea {
     white-space: pre-wrap;
 }
 
+.budget_entry {
+    font-size: 12px;
+}
 .enter label{
 font-size: small;
 display: flex;

@@ -44,7 +44,7 @@ function addExp() {
     
     amount.value = '';
     catagory.value = '';
-    date.value = '';
+    date.value = 'mm/dd/yyyy';
 
     //add script to add amount to chosen catagory 
 
