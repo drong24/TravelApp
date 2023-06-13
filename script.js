@@ -1,8 +1,16 @@
+
+
 var Lodging = 0;
 var Transportation = 0;
 var Food = 0;
 var Others = 0;
 
+new Chart("myChart", {
+    type: "bar",
+    data {
+        labels:
+    }
+})
 
 function getTxt(id) {
     return document.getElementById(id)
@@ -53,3 +61,4 @@ function addExp() {
     console.log(date);
     console.log(Lodging);
 }
+
