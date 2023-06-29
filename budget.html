@@ -10,7 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 </script>
 </head>
-<body>
+<body onload="addBudget()">
     <div class="index">
         <nav class="menu">
             <a class="menu_item1" > Itinerary</a>
@@ -25,7 +25,8 @@
                 <canvas id="budget-graph"></canvas>
             </div>
             <div class="bueget_items">
-                <div class="enter">
+                <button onclick="addBudget()" class="small_button">+ Add Entry</button>
+                <div id="budget_enter">
                     <label>Catagory</label>          
                     <select class="budget_catag">
                         <option></option>

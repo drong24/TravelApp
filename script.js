@@ -35,6 +35,17 @@ function addText() {
 
 }
 
+function addBudget() {
+    var inputBox = getTxt('budget_enter')
+    if (inputBox.style.display == "none") {
+
+        inputBox.style.display = 'block';
+    }
+    else {
+        inputBox.style.display = "none";
+    }
+}
+
 function addExp() {
     const amount = document.querySelector('.budget_amount');
     const catagory = document.querySelector('.budget_catag');
