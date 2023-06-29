@@ -186,10 +186,10 @@ textarea {
 .budget_entry {
     font-size: 12px;
 }
-.enter label{
-font-size: small;
-display: flex;
-}
+#budget_enter label{
+    font-size: small;
+    display: flex;
+    }
 .budget_amount {
     width: 100px;
     height: 25px;
