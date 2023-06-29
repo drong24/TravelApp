@@ -1,9 +1,5 @@
 
 
-var Lodging = 0;
-var Transportation = 0;
-var Food = 0;
-var Others = 0;
 
 
 

@@ -50,17 +50,17 @@
 </body>
 
 <script>
+    var BudgetCata = {Lodging: 0, Transportation: 0, Food: 5, Others: 0};
     const ctx = document.getElementById('myChart');
-  
-    new Chart(ctx, {
+    
+    var chart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['Lodging', 'Transportation', 'Food', 'Others'],
-        datasets: [{
-          label: 'Amount Spent',
-          data: [0, 0, 0, 0],
-          borderWidth: 1
-        }]
+          labels: ['Lodging', 'Transportation', 'Food', 'Others'],
+          datasets: [{
+            label: 'Amount Spent',
+            data: [BudgetCata.Lodging, BudgetCata.Transportation, BudgetCata.Food, BudgetCata.Others],         }],
+
       },
       options: {
         scales: {
@@ -70,11 +70,38 @@
         }
       }
     });
+    //console.log(Lodging.valueOf());
 
     function AddBudgetItem() {
         const amount = document.querySelector('.budget_amount');
         const catagory = document.querySelector('.budget_catag');
 
+        switch (catagory.value) {
+            case 'Transportation': 
+            BudgetCata.Transportation += parseInt(amount.value);
+            break;
+
+            case 'Lodging': 
+            BudgetCata.Lodging += parseInt(amount.value);
+            break;
+
+            case 'Others': 
+            BudgetCata.Others += parseInt(amount.value);
+            break;
+
+            case 'Food': 
+            BudgetCata.Food += parseInt(amount.value);
+            break;
+
+            default: 
+            console.log('should not show');
+        };
+        
+        console.log(catagory.value);
+        console.log(BudgetCata.Lodging);
+        console.log(chart.data.datasets);
+
+        //chart.update();
         
     }
   </script>
