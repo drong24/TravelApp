@@ -1,17 +1,11 @@
-import Chart from 'chart.js/auto';
-import { getRelativePosition } from 'chart.js/helpers';
+
 
 var Lodging = 0;
 var Transportation = 0;
 var Food = 0;
 var Others = 0;
 
-new Chart(document.getElementById('budget-graph'), {
-    type: "bar",
-    data {
-        labels:
-    }
-})
+
 
 function getTxt(id) {
     return document.getElementById(id)
@@ -56,10 +50,11 @@ function addExp() {
     date.value = 'mm/dd/yyyy';
 
     //add script to add amount to chosen catagory 
-
+/*
     console.log(amount);
     console.log(catagory);
     console.log(date);
     console.log(Lodging);
+    */
 }
 
