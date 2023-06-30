@@ -51,7 +51,7 @@
 </body>
 
 <script>
-    var BudgetCata = {Lodging: 0, Transportation: 0, Food: 0, Others: 0};
+    var BudgetCata = {Lodging: 4, Transportation: 4, Food: 4, Others: 4};
     const ctx = document.getElementById('myChart');
     
     var chart = new Chart(ctx, {
@@ -61,15 +61,14 @@
           datasets: [{
             label: 'Amount Spent',
             data: [BudgetCata.Lodging, BudgetCata.Transportation, BudgetCata.Food, BudgetCata.Others],
-            backgroundColor: ['#eb4034', '#ebeb34', '#34eb34', '#de34eb'],
+            backgroundColor: ['rgb(255, 0, 0, 0.4)', 'rgb(255, 98, 0, 0.4)', 'rgb(242, 255, 0, 0.4)', 'rgb(158, 50, 168, 0.4)'],
 
         }],
       },
       options: {
-        responsive: true,
         scales: {
           y: {
-            beginAtZero: true,
+            min: 0,
             suggestedMax: 100
           }
         }
