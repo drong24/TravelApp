@@ -1,5 +1,5 @@
 * {
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -140,6 +140,12 @@ select {
     width: auto;
 }
 
+#budget_content {
+display: flex;
+flex-direction: column;
+height: 45%;
+}
+
 @keyframes content_fade {
     from {opacity: 0; transform: translateY(15px);}
     to {opacity: 100%; transform: translateY(0px);}
@@ -186,9 +192,19 @@ textarea {
 .budget_entry {
     font-size: 12px;
 }
+
+.budget_items {
+    width: 482px;
+    align-items: left;
+}
+#budget_enter {
+    display: flex;
+    flex-basis: 20%;
+}
 #budget_enter label{
     font-size: small;
     display: flex;
+    width: 482px;
     }
 .budget_amount {
     width: 100px;

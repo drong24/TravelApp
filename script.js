@@ -32,13 +32,17 @@ function addText() {
 }
 
 function addBudget() {
-    var inputBox = getTxt('budget_enter')
+    var inputBox = getTxt('budget_enter');
+    var spacerBox = getTxt('budget_spacer');
     if (inputBox.style.display == "none") {
-
+        spacerBox.style.height = "0px";
         inputBox.style.display = 'block';
     }
     else {
+        spacerBox.style.height = "219px";
         inputBox.style.display = "none";
+        
+        
     }
 }
 

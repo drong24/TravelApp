@@ -20,11 +20,11 @@
             <a class="menu_item5">Map</a>
         </nav>
             <a class="title" href="./index.html">TravelApp</a>
-        <div class="content">
+        <div class="content" id="budget_content">
             <div class="budget_graph"> 
                 <canvas id="myChart"></canvas>
             </div>
-            <div class="bueget_items">
+            <div class="budget_items">
                 <button onclick="addBudget()" class="small_button">+ Add Entry</button>
                 <div id="budget_enter">
                     <label>Catagory</label>          
@@ -36,9 +36,10 @@
                         <option>Others</option>
                     </select>     
                     <label>Amount</label><textarea class="budget_amount"></textarea>
-                    <label>Date</label><input type="datetime-local" class="budget_date">
+                    <!-- <label>Date</label><input type="datetime-local" class="budget_date"> -->
                     <button class="budget_button small_button" onclick="AddBudgetItem()">Add Expense</button>
                 </div>
+                <div id="budget_spacer"></div>
                 <div class="budget_entry">
                     
 
@@ -50,7 +51,7 @@
 </body>
 
 <script>
-    var BudgetCata = {Lodging: 14, Transportation: 66, Food: 5, Others: 99};
+    var BudgetCata = {Lodging: 0, Transportation: 0, Food: 0, Others: 0};
     const ctx = document.getElementById('myChart');
     
     var chart = new Chart(ctx, {
@@ -61,7 +62,7 @@
             label: 'Amount Spent',
             data: [BudgetCata.Lodging, BudgetCata.Transportation, BudgetCata.Food, BudgetCata.Others],
             backgroundColor: ['#eb4034', '#ebeb34', '#34eb34', '#de34eb'],
-                     
+
         }],
 
       },
