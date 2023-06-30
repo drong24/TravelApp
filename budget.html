@@ -37,7 +37,7 @@
                     </select>     
                     <label>Amount</label><textarea class="budget_amount"></textarea>
                     <label>Date</label><input type="datetime-local" class="budget_date">
-                    <button class="budget_button small_button" onclick="addExp(),  AddBudgetItem()">Add Expense</button>
+                    <button class="budget_button small_button" onclick="AddBudgetItem()">Add Expense</button>
                 </div>
                 <div class="budget_entry">
                     
@@ -50,7 +50,7 @@
 </body>
 
 <script>
-    var BudgetCata = {Lodging: 0, Transportation: 0, Food: 5, Others: 0};
+    var BudgetCata = {Lodging: 14, Transportation: 66, Food: 5, Others: 99};
     const ctx = document.getElementById('myChart');
     
     var chart = new Chart(ctx, {
@@ -59,7 +59,9 @@
           labels: ['Lodging', 'Transportation', 'Food', 'Others'],
           datasets: [{
             label: 'Amount Spent',
-            data: [BudgetCata.Lodging, BudgetCata.Transportation, BudgetCata.Food, BudgetCata.Others],         
+            data: [BudgetCata.Lodging, BudgetCata.Transportation, BudgetCata.Food, BudgetCata.Others],
+            backgroundColor: ['#eb4034', '#ebeb34', '#34eb34', '#de34eb'],
+                     
         }],
 
       },
@@ -97,15 +99,9 @@
             default: 
             console.log('should not show');
         };
-        /*
-        console.log(catagory.value);
-        console.log(BudgetCata.Lodging);
-        console.log(chart.data.datasets);
-*/  
+ 
         chart.data.datasets[0].data = [BudgetCata.Lodging, BudgetCata.Transportation, BudgetCata.Food, BudgetCata.Others];
         chart.update();
-        console.log(chart.data.datasets);
-        
     }
   </script>
    

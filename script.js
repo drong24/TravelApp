@@ -42,6 +42,7 @@ function addBudget() {
     }
 }
 
+//adds a div that provides information of an added expense
 function addExp() {
     const amount = document.querySelector('.budget_amount');
     const catagory = document.querySelector('.budget_catag');
