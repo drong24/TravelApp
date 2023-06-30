@@ -59,7 +59,8 @@
           labels: ['Lodging', 'Transportation', 'Food', 'Others'],
           datasets: [{
             label: 'Amount Spent',
-            data: [BudgetCata.Lodging, BudgetCata.Transportation, BudgetCata.Food, BudgetCata.Others],         }],
+            data: [BudgetCata.Lodging, BudgetCata.Transportation, BudgetCata.Food, BudgetCata.Others],         
+        }],
 
       },
       options: {
@@ -96,12 +97,14 @@
             default: 
             console.log('should not show');
         };
-        
+        /*
         console.log(catagory.value);
         console.log(BudgetCata.Lodging);
         console.log(chart.data.datasets);
-
-        //chart.update();
+*/  
+        chart.data.datasets[0].data = [BudgetCata.Lodging, BudgetCata.Transportation, BudgetCata.Food, BudgetCata.Others];
+        chart.update();
+        console.log(chart.data.datasets);
         
     }
   </script>
