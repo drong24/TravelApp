@@ -15,7 +15,7 @@
         <nav class="menu">
             <a class="menu_item1" > Itinerary</a>
             <a class="menu_item2" href="./journal.html">Journal</a>
-            <a class="menu_item3">Budget</a>
+            <a class="menu_item3" href="budget.html">Budget</a>
             <a class="menu_item4">Calender</a>
             <a class="menu_item5">Map</a>
         </nav>
@@ -51,7 +51,7 @@
 </body>
 
 <script>
-    var BudgetCata = {Lodging: 4, Transportation: 4, Food: 4, Others: 4};
+    var BudgetCata = {Lodging: 0, Transportation: 0, Food: 0, Others: 0};
     const ctx = document.getElementById('myChart');
     
     var chart = new Chart(ctx, {
@@ -66,13 +66,15 @@
         }],
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: true,
         scales: {
           y: {
-            min: 0,
-            suggestedMax: 100
+            beginAtZero: true
+            
           }
         }
-      }
+      },
     });
     //console.log(Lodging.valueOf());
 
