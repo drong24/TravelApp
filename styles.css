@@ -223,3 +223,19 @@ textarea {
 }
 
 
+/*itinerary*/
+.itinerary_enter label{
+    display: flex;
+}
+.itin_date {
+width: 100px;
+height: 25px;
+}
+.itin_activity {
+width: 100px;
+height: 25px;
+}
+.itin_address {
+width: 100px;
+height: 25px;
+}
