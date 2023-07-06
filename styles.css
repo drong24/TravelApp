@@ -229,15 +229,15 @@ textarea {
     flex-direction: column;
     font-size: small;
 }
-.itin_date {
+#itin_date {
 width: 100px;
 height: 25px;
 }
-.itin_activity {
+#itin_activity {
 width: 100px;
 height: 25px;
 }
-.itin_address {
+#itin_address {
 width: 100px;
 height: 25px;
 }

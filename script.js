@@ -1,5 +1,5 @@
 
-
+var itin_items = [];
 
 
 
@@ -86,5 +86,16 @@ function addItinerary() {
         inputBox.style.display = "none";
         spacerBox.style.height = '141px';
     }
+}
+
+function addItineraryItem() {
+    var date = getTxt('itin_date').value;
+    var activity = getTxt('itin_activity').value;
+    var address = getTxt('itin_address').value;
+
+    itin_items.push({date, activity, address});
+    itin_items.sort()
+    console.log(itin_items);
+
 }
 

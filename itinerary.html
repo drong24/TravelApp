@@ -21,9 +21,10 @@
         <div class="content">
             <button onclick="addItinerary()" class="small_button">+ Add Entry</button>
             <div id="enter" class="itinerary_enter">
-                <label>Date</label><input class="itin_date" type="datetime-local" class="budget_date">
-                <label>Activity</label><textarea class="itin_activity"></textarea>
-                <label>Address</label><textarea class="itin_address"></textarea>
+                <label>Date</label><input id="itin_date" type="datetime-local" class="budget_date">
+                <label>Activity</label><textarea id="itin_activity"></textarea>
+                <label>Address</label><textarea id="itin_address"></textarea>
+                <button onclick="addItineraryItem()" class="small_button">Save</button>
             </div>
             <div id="itinerary_spacer"></div>
             <div class="entry"></div>
