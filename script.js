@@ -73,6 +73,18 @@ function addExp() {
 
 
 function addItinerary() {
+    var inputBox = getTxt('enter')
+    var spacerBox = getTxt('itinerary_spacer')
 
+    if (inputBox.style.display == "none") {
+
+        inputBox.style.display = 'flex';
+        inputBox.style.flexDirection = 'column';
+        spacerBox.style.height = '0px';
+    }
+    else {
+        inputBox.style.display = "none";
+        spacerBox.style.height = '141px';
+    }
 }
 

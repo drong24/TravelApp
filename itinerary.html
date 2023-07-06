@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./styles.css">
     <script src="./script.js"></script>
 </head>
-<body onload="addText()">
+<body onload="addItinerary()">
     <div class="index">
         <nav class="menu">
             <a class="menu_item1" href="./itinerary.html"> Itinerary</a>
@@ -19,13 +19,13 @@
         </nav>
             <a class="title" href="./index.html">TravelApp</a>
         <div class="content">
-            <button onclick="addText()" class="small_button">+ Add Entry</button>
+            <button onclick="addItinerary()" class="small_button">+ Add Entry</button>
             <div id="enter" class="itinerary_enter">
                 <label>Date</label><input class="itin_date" type="datetime-local" class="budget_date">
                 <label>Activity</label><textarea class="itin_activity"></textarea>
-                <labe>Address</labe><textarea class="itin_address"></textarea>
-            
+                <label>Address</label><textarea class="itin_address"></textarea>
             </div>
+            <div id="itinerary_spacer"></div>
             <div class="entry"></div>
         </div>
     </div>

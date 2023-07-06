@@ -1,5 +1,5 @@
 * {
-    /*border: 1px solid red;*/
+    border: 1px solid red;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -226,6 +226,8 @@ textarea {
 /*itinerary*/
 .itinerary_enter label{
     display: flex;
+    flex-direction: column;
+    font-size: small;
 }
 .itin_date {
 width: 100px;
