@@ -94,7 +94,13 @@ function addItineraryItem() {
     var address = getTxt('itin_address').value;
 
     itin_items.push({date, activity, address});
-    itin_items.sort()
+    itin_items.sort(function(a, b) {
+        return a.date - b.date;
+    });
+    document.querySelector('.itinerary_entry').innerHTML += 
+    `<div class="card"><p>${activity}</p>
+    <p>${address}</p>
+    <small class="dateTime">${date}</small></div>`
     console.log(itin_items);
 
 }
