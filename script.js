@@ -97,10 +97,21 @@ function addItineraryItem() {
     itin_items.sort(function(a, b) {
         return new Date(a.date) - new Date(b.date);
     });
-    document.querySelector('.itinerary_entry').innerHTML += 
+
+    document.querySelector('.itinerary_entry').innerHTML = "";
+
+    itin_items.forEach(element => {
+        document.querySelector('.itinerary_entry').innerHTML += 
+        `<div class="card"><p>${element.activity}</p>
+        <p>${element.address}</p>
+        <small class="dateTime">${element.date}</small></div>`
+    }); 
+
+    /*
     `<div class="card"><p>${activity}</p>
     <p>${address}</p>
-    <small class="dateTime">${date}</small></div>`
+    <small class="dateTime">${date}</small></div>`*/
+
     console.log(itin_items);
 
 }
