@@ -172,6 +172,7 @@ textarea {
     width: 400px;
     height: 100px;
     font-size: small;
+    overflow: scroll;
 }
 
 .card {
@@ -240,4 +241,11 @@ height: 25px;
 #itin_address {
 width: 100px;
 height: 25px;
+}
+
+.itinerary_entry {
+    font-size: small;
+    height: 200px;
+    width: 600px;
+    overflow: scroll;
 }

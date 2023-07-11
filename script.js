@@ -107,11 +107,6 @@ function addItineraryItem() {
         <small class="dateTime">${element.date}</small></div>`
     }); 
 
-    /*
-    `<div class="card"><p>${activity}</p>
-    <p>${address}</p>
-    <small class="dateTime">${date}</small></div>`*/
-
     console.log(itin_items);
 
 }
