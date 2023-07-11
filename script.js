@@ -20,13 +20,18 @@ function getRs() {
 }
 
 function addText() {
-    var inputBox = getTxt('enter')
+    var inputBox = getTxt('enter');
+    var spacerBox = getTxt('journal_spacer');
+
     if (inputBox.style.display == "none") {
 
         inputBox.style.display = 'block';
+        spacerBox.style.display = 'none';
+
     }
     else {
         inputBox.style.display = "none";
+        spacerBox.style.display = 'block';
     }
 
 }
@@ -84,7 +89,7 @@ function addItinerary() {
     }
     else {
         inputBox.style.display = "none";
-        spacerBox.style.height = '141px';
+        spacerBox.style.height = '169.5px';
     }
 }
 

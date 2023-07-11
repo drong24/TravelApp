@@ -138,12 +138,23 @@ select {
     align-items: center;
     height: auto;
     width: auto;
+    padding-top: 130px;
+}
+
+.journal_entry {
+width: 550px;
+}
+
+#journal_spacer {
+    width: 600px;
+    height: 119.5px;
 }
 
 #budget_content {
 display: flex;
 flex-direction: column;
 height: 45%;
+padding: 0px;
 }
 
 @keyframes content_fade {
@@ -169,8 +180,8 @@ textarea {
 }
 
 #entry {
-    width: 400px;
-    height: 100px;
+    width: 600px;
+    height: 300px;
     font-size: small;
     overflow: scroll;
 }
@@ -245,7 +256,7 @@ height: 25px;
 
 .itinerary_entry {
     font-size: small;
-    height: 200px;
+    height: 300px;
     width: 600px;
     overflow: scroll;
 }
