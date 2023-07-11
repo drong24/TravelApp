@@ -95,7 +95,7 @@ function addItineraryItem() {
 
     itin_items.push({date, activity, address});
     itin_items.sort(function(a, b) {
-        return a.date - b.date;
+        return new Date(a.date) - new Date(b.date);
     });
     document.querySelector('.itinerary_entry').innerHTML += 
     `<div class="card"><p>${activity}</p>
