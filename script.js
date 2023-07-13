@@ -96,6 +96,24 @@ function addItinerary() {
     calender.style.display = "none";
 }
 
+function itineraryMode() {
+    var calender = getTxt('itinerary_calender');
+    
+    //needs to be changed to class
+    var entry = getTxt('itinerary_entry');
+    
+    //console.log(entry.style.display);
+
+    if (calender.style.display == "none") {
+        calender.style.display = 'block';
+        entry.style.display = 'none';
+    }
+    else {
+        calender.style.display = 'none';
+        entry.style.display = 'block';
+    }
+}
+
 function addItineraryItem() {
     var date = getTxt('itin_date').value;
     var activity = getTxt('itin_activity').value;
