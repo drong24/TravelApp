@@ -91,6 +91,9 @@ function addItinerary() {
         inputBox.style.display = "none";
         spacerBox.style.height = '169.5px';
     }
+    //hides itinerary calender
+    var calender = getTxt('itinerary_calender');
+    calender.style.display = "none";
 }
 
 function addItineraryItem() {
