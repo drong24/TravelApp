@@ -20,6 +20,7 @@
             <a class="title" href="./index.html">TravelApp</a>
         <div class="content">
             <button onclick="addItinerary()" class="small_button">+ Add Entry</button>
+            <button class="small_button">Mode</button>
             <div id="enter" class="itinerary_enter">
                 <label>Date</label><input id="itin_date" type="datetime-local" class="budget_date">
                 <label>Activity</label><textarea id="itin_activity"></textarea>
@@ -28,6 +29,19 @@
             </div>
             <div id="itinerary_spacer"></div>
             <div class="itinerary_entry"></div>
+            <div class="itinerary_calender">
+                <div id="calender_header"></div>
+                <div id="weekdays">
+                    <div>Sunday</div>
+                    <div>Monday</div>
+                    <div>Tuesday</div>
+                    <div>Wednesday</div>
+                    <div>Thursday</div>
+                    <div>Friday</div>
+                    <div>Saturday</div>
+                </div>
+                <div id="calender"></div>    
+            </div>
         </div>
     </div>
 </body>
