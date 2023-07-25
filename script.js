@@ -13,17 +13,34 @@ function load() {
     const month = dt.getMonth();
     const year = dt.getFullYear();
 
-    const daysInMonth = new Date(year, month + 1, 0);
-    const firstDayOfMonth = new Date(year, month, 1).getDate();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const firstDayOfMonth = new Date(year, month, 1);
     
-    console.log(firstDayOfMonth);
+    
     const dateString = firstDayOfMonth.toLocaleDateString('en-us', {
         weekday: 'long',
         year: 'numeric',
+        month: 'numeric',
         day: 'numeric',
     });
+    const paddingDays = weekdays.indexOf(dateString.split(', ')[0]); 
 
-    console.log(firstDayOfMont);
+    for(let i = 1; i <= paddingDays + daysInMonth; i++) {
+        const daySquare = document.createElement('div');
+        daySquare.classList.add('day');
+
+        if (i > paddingDays) {
+            daySquare.innerText = i - paddingDays;
+
+            daySquare.addEventListener('click', () => console.log('click'))
+        } else {
+            daySquare.classList.add('padding');
+        }
+
+        calender.appendChild(daySquare);
+    }
+
+    console.log(paddingDays);
 }
 load();
 
@@ -122,14 +139,13 @@ function addItinerary() {
 
 function itineraryMode() {
     var calender = getTxt('itinerary_calender');
+    var entry = getTxt('itin_entry');
     
-    //needs to be changed to class
-    var entry = getTxt('itinerary_entry');
-    
-    //console.log(entry.style.display);
+    console.log(entry);
 
-    if (calender.style.display == "none") {
-        calender.style.display = 'block';
+    if (calender.style.display == 'none') {
+        calender.style.display = 'flex';
+        calender.style.flexDirection = 'column';
         entry.style.display = 'none';
     }
     else {
