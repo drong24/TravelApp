@@ -1,7 +1,31 @@
 
 var itin_items = [];
+let nav = 0;
+let clicked = null;
+let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [];
 
+const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const calender = document.getElementById('calender');
 
+function load() {
+    const dt = new Date();
+    const day = dt.getDate();
+    const month = dt.getMonth();
+    const year = dt.getFullYear();
+
+    const daysInMonth = new Date(year, month + 1, 0);
+    const firstDayOfMonth = new Date(year, month, 1).getDate();
+    
+    console.log(firstDayOfMonth);
+    const dateString = firstDayOfMonth.toLocaleDateString('en-us', {
+        weekday: 'long',
+        year: 'numeric',
+        day: 'numeric',
+    });
+
+    console.log(firstDayOfMont);
+}
+load();
 
 function getTxt(id) {
     return document.getElementById(id)
