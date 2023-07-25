@@ -5,9 +5,11 @@ let clicked = null;
 let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [];
 
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-const calender = document.getElementById('calender');
+const calender = getTxt('calender');
 
 function load() {
+    console.log(calender);
+
     const dt = new Date();
     const day = dt.getDate();
     const month = dt.getMonth();
@@ -24,7 +26,7 @@ function load() {
         day: 'numeric',
     });
     const paddingDays = weekdays.indexOf(dateString.split(', ')[0]); 
-
+    console.log(paddingDays)
     for(let i = 1; i <= paddingDays + daysInMonth; i++) {
         const daySquare = document.createElement('div');
         daySquare.classList.add('day');
@@ -32,17 +34,17 @@ function load() {
         if (i > paddingDays) {
             daySquare.innerText = i - paddingDays;
 
-            daySquare.addEventListener('click', () => console.log('click'))
+            daySquare.addEventListener('click', () => console.log('click'));
         } else {
             daySquare.classList.add('padding');
         }
-
+        console.log(daySquare);
         calender.appendChild(daySquare);
     }
 
     console.log(paddingDays);
 }
-load();
+
 
 function getTxt(id) {
     return document.getElementById(id)
@@ -141,7 +143,7 @@ function itineraryMode() {
     var calender = getTxt('itinerary_calender');
     var entry = getTxt('itin_entry');
     
-    console.log(entry);
+    //console.log(entry);
 
     if (calender.style.display == 'none') {
         calender.style.display = 'flex';
