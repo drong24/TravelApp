@@ -63,7 +63,8 @@ function load() {
     let dayEvent = document.createElement('div');
     console.log(calenderDays);
     itin_items.forEach(element => {
-        if (new Date(element.date).getMonth() == dt.getMonth() && new Date(element.date).getFullYear() == dt.getFullYear()) {
+        if (new Date(element.date).getMonth() == 
+        dt.getMonth() && new Date(element.date).getFullYear() == dt.getFullYear()) {
             calenderDays.forEach(day => {
                 console.log(day.innerHTML);
                 console.log(new Date(element.date).getDate());
@@ -193,9 +194,9 @@ function itineraryMode() {
 }
 
 function addItineraryItem() {
-    var date = getTxt('itin_date').value;
-    var activity = getTxt('itin_activity').value;
-    var address = getTxt('itin_address').value;
+    let date = getTxt('itin_date').value;
+    let activity = getTxt('itin_activity').value;
+    let address = getTxt('itin_address').value;
 
     itin_items.push({date, activity, address});
     itin_items.sort(function(a, b) {
@@ -210,7 +211,10 @@ function addItineraryItem() {
         <p>${element.address}</p>
         <small class="dateTime">${element.date}</small></div>`
     }); 
-    var inputBox = getTxt('enter')
+
+    getTxt('itin_activity').value = "";
+    getTxt('itin_address').value = "";
+    var inputBox = getTxt('enter');
     inputBox.style.display = 'none';
     console.log(itin_items);
 
