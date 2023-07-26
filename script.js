@@ -139,18 +139,16 @@ function addExp() {
 
 
 function addItinerary() {
+    
     var inputBox = getTxt('enter')
-    var spacerBox = getTxt('itinerary_spacer')
 
     if (inputBox.style.display == "none") {
 
         inputBox.style.display = 'flex';
         inputBox.style.flexDirection = 'column';
-        spacerBox.style.height = '0px';
     }
     else {
         inputBox.style.display = "none";
-        spacerBox.style.height = '169.5px';
     }
     //hides itinerary calender
     var calender = getTxt('itinerary_calender');
@@ -160,17 +158,19 @@ function addItinerary() {
 function itineraryMode() {
     var calender = getTxt('itinerary_calender');
     var entry = getTxt('itin_entry');
-    
+    let spacer = document.getElementById('itinerary_spacer');
     //console.log(entry);
 
     if (calender.style.display == 'none') {
         calender.style.display = 'flex';
         calender.style.flexDirection = 'column';
         entry.style.display = 'none';
+        spacer.style.display = 'none';
     }
     else {
         calender.style.display = 'none';
         entry.style.display = 'block';
+        spacer.style.display = 'block';
     }
 }
 
@@ -192,7 +192,8 @@ function addItineraryItem() {
         <p>${element.address}</p>
         <small class="dateTime">${element.date}</small></div>`
     }); 
-
+    var inputBox = getTxt('enter')
+    inputBox.style.display = 'none';
     console.log(itin_items);
 
 }

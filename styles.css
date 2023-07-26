@@ -1,5 +1,5 @@
 * {
-   /*border: 1px solid red;*/
+    /*border: 1px solid red;*/
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -115,7 +115,7 @@ select {
     animation-fill-mode: forwards;
     top: 50%;
     position: fixed;
-    z-index: 3;
+    z-index: 2;
 }
 @keyframes slide_up {
     from {transform: translateY(0);}
@@ -236,21 +236,37 @@ textarea {
 
 
 /*itinerary*/
+.itinerary_enter {
+    position: absolute;
+    z-index: 1000;
+    background-color: rgb(0, 0, 0);
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    border: 5px solid brown;
+    padding: 15px;
+}
 .itinerary_enter label{
     display: flex;
     flex-direction: column;
     font-size: small;
 }
+.itinerary_enter textarea {
+width: 561px;
+padding: 15px;
+}
+
 #itin_date {
-width: 100px;
+width: 200px;
 height: 25px;
 }
 #itin_activity {
-width: 100px;
+width: 561px;
 height: 25px;
 }
 #itin_address {
-width: 100px;
+width: 561px;
 height: 25px;
 }
 
