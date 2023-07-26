@@ -7,6 +7,14 @@ let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('e
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const calender = getTxt('calender');
 
+function onLoad() {
+    let calender = document.getElementById('itinerary_calender');
+    let inputBox = document.getElementById('enter');
+    
+    calender.style.display = 'none';
+    inputBox.style.display = 'none';
+}
+
 function load() {
     const dt = new Date();
     console.log(dt);
@@ -150,9 +158,6 @@ function addItinerary() {
     else {
         inputBox.style.display = "none";
     }
-    //hides itinerary calender
-    var calender = getTxt('itinerary_calender');
-    calender.style.display = "none";
 }
 
 function itineraryMode() {
