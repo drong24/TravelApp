@@ -245,13 +245,14 @@ textarea {
 .itinerary_enter {
     position: absolute;
     z-index: 1000;
-    background-color: rgb(0, 0, 0, 0.8);
+    background-color: rgba(32, 0, 0, 0.8);
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
     border: 5px solid rgb(0, 0, 0);
     padding: 15px;
+    animation: content_fade 0.5s;
 }
 
 .itinerary_enter {
