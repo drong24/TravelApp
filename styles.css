@@ -19,6 +19,12 @@ select {
     background: transparent;
     color: aliceblue; 
 }
+button:hover {
+    background-color: rgb(195, 49, 49);
+    cursor: pointer;
+    
+}
+
 .index {
     font-size: 32px;
     min-height: 100vh;
@@ -239,18 +245,40 @@ textarea {
 .itinerary_enter {
     position: absolute;
     z-index: 1000;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0, 0.8);
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
-    border: 5px solid brown;
+    border: 5px solid rgb(0, 0, 0);
     padding: 15px;
 }
+
+.itinerary_enter {
+    border-radius: 15px;
+}
+
 .itinerary_enter label{
     display: flex;
     flex-direction: column;
     font-size: small;
+}
+
+.itinerary_enter textarea {
+    margin-bottom: 10px;
+}
+
+.itinerary_enter input {
+    margin-bottom: 10px;
+}
+
+.itin_enter_buttons {
+    flex-direction: column;
+}
+
+#itin_enter_title {
+    align-items: center;
+    font-size: 25px;
 }
 
 #itin_date {
