@@ -267,8 +267,9 @@ height: 25px;
     flex-direction: row;
     justify-content: space-between;
     font-size: 14px;
-    width: 598px;
-    margin: 5px;
+    width: 100%;
+    padding: 8px;
+
 }
 #calender {
     border: 1px solid black;
