@@ -158,19 +158,16 @@ function addItinerary() {
 function itineraryMode() {
     var calender = getTxt('itinerary_calender');
     var entry = getTxt('itin_entry');
-    let spacer = document.getElementById('itinerary_spacer');
     //console.log(entry);
 
     if (calender.style.display == 'none') {
         calender.style.display = 'flex';
         calender.style.flexDirection = 'column';
         entry.style.display = 'none';
-        spacer.style.display = 'none';
     }
     else {
         calender.style.display = 'none';
         entry.style.display = 'block';
-        spacer.style.display = 'block';
     }
 }
 

@@ -252,14 +252,14 @@ textarea {
     flex-direction: column;
     font-size: small;
 }
-.itinerary_enter textarea {
-width: 561px;
-padding: 15px;
-}
 
 #itin_date {
-width: 200px;
+width: auto;
 height: 25px;
+}
+#itin_date::-webkit-calendar-picker-indicator {
+    width: 100%;
+    border: 1px solid brown;
 }
 #itin_activity {
 width: 561px;
