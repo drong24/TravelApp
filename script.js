@@ -50,14 +50,30 @@ function load() {
 
         if (i > paddingDays) {
             daySquare.innerText = i - paddingDays;
-
+            
             daySquare.addEventListener('click', () => console.log('click'));
         } else {
             daySquare.classList.add('padding');
         }
-        
+        console.log(daySquare);
         calender.appendChild(daySquare);
     }
+
+    let calenderDays = document.querySelectorAll('.day');
+    let dayEvent = document.createElement('div');
+    console.log(calenderDays);
+    itin_items.forEach(element => {
+        if (new Date(element.date).getMonth() == dt.getMonth() && new Date(element.date).getFullYear() == dt.getFullYear()) {
+            calenderDays.forEach(day => {
+                console.log(day.innerHTML);
+                console.log(new Date(element.date).getDate());
+                if(day.innerHTML == new Date(element.date).getDate()) {
+                    dayEvent.innerText = element.activity;
+                    day.appendChild(dayEvent);
+                }
+            });
+        }
+    });
 }
 
 function initButton() {
