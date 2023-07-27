@@ -333,6 +333,12 @@ height: 25px;
     padding: 8px;
 
 }
+.weekday {
+    display: flex;
+    flex: 1 0 12%;
+    justify-content: center;
+}
+
 #calender {
     border: 1px solid black;
     display: flex;
@@ -348,7 +354,7 @@ height: 25px;
 }
 .day {
     border: 1px solid black;
-    flex: 1 0 12%;
+    flex: 1 0 12.5%;
     margin: 2px;
     padding: 5px;
     height: 50px;
