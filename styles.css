@@ -376,7 +376,11 @@ height: 25px;
     margin-left: auto;
 }
 
-.hover:hover {
-    
+.itin_hover {
+    display: none;
+    position: absolute;
+    z-index: 500;
+
 }
+
 

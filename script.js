@@ -88,11 +88,14 @@ function load() {
             //console.log(day);
             eventNum = 0;
             day.classList.add('hover');
+            hoverEvent.classList.add('itin_hover');
             day.append(hoverEvent);
             day.addEventListener('mouseover', () => {
                 console.log('hoverEvent');
-                hoverEvent.classList.add('itin_hover');
-                
+                document.querySelector('.itin_hover').style.display = 'block';                
+            });
+            day.addEventListener('mouseout', () => {
+                document.querySelector('.itin_hover').style.display = 'none';                
             });
         }
     })
