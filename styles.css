@@ -313,6 +313,16 @@ height: 25px;
     overflow: scroll;
 }
 
+#calender_header {
+    display: flex;
+    flex-direction: row;
+}
+
+#nav_buttons {
+    margin-left: auto;
+    margin-right: 0;
+}
+
 #weekdays {
     border: 1px solid black;
     display: flex;

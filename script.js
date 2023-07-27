@@ -43,7 +43,7 @@ function load() {
 
     calender.innerHTML = '';
 
-    console.log(daysInMonth);
+    //console.log(daysInMonth);
     for(let i = 1; i <= 42; i++) {
         const daySquare = document.createElement('div');
         daySquare.classList.add('day');
@@ -55,26 +55,48 @@ function load() {
             
             daySquare.addEventListener('click', () => console.log('click'));
         }
-        console.log(daySquare);
+        //console.log(daySquare);
         calender.appendChild(daySquare);
     }
 
+    let eventNum = 0;
     let calenderDays = document.querySelectorAll('.day');
-    let dayEvent = document.createElement('div');
-    console.log(calenderDays);
-    itin_items.forEach(element => {
+    let dayEvent;
+    //console.log(calenderDays);
+
+    calenderDays.forEach(day => {
+        itin_items.forEach(activity => {
+            if (new Date(activity.date).getMonth() == dt.getMonth() && 
+            new Date(activity.date).getFullYear() == dt.getFullYear() && 
+            day.innerHTML == new Date(activity.date).getDate()) {
+                eventNum++;
+                console.log(day);
+                console.log('!!');
+            }
+        })
+        if (eventNum != 0) {
+            dayEvent = document.createElement('div');
+            dayEvent.classList.add('eventNum');
+            dayEvent.innerText = eventNum;
+            //console.log(dayEvent);
+            day.append(dayEvent);
+            //console.log(day);
+            eventNum = 0;
+        }
+    })
+   /* itin_items.forEach(element => {
         if (new Date(element.date).getMonth() == 
         dt.getMonth() && new Date(element.date).getFullYear() == dt.getFullYear()) {
             calenderDays.forEach(day => {
-                console.log(day.innerHTML);
-                console.log(new Date(element.date).getDate());
+                //console.log(day.innerHTML);
+                //console.log(new Date(element.date).getDate());
                 if(day.innerHTML == new Date(element.date).getDate()) {
                     dayEvent.innerText = element.activity;
                     day.appendChild(dayEvent);
                 }
             });
         }
-    });
+    });*/
 }
 
 function initButton() {
