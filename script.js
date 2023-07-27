@@ -84,19 +84,6 @@ function load() {
             eventNum = 0;
         }
     })
-   /* itin_items.forEach(element => {
-        if (new Date(element.date).getMonth() == 
-        dt.getMonth() && new Date(element.date).getFullYear() == dt.getFullYear()) {
-            calenderDays.forEach(day => {
-                //console.log(day.innerHTML);
-                //console.log(new Date(element.date).getDate());
-                if(day.innerHTML == new Date(element.date).getDate()) {
-                    dayEvent.innerText = element.activity;
-                    day.appendChild(dayEvent);
-                }
-            });
-        }
-    });*/
 }
 
 function initButton() {
@@ -224,15 +211,8 @@ function addItineraryItem() {
     itin_items.sort(function(a, b) {
         return new Date(a.date) - new Date(b.date);
     });
-
-    document.querySelector('.itinerary_entry').innerHTML = "";
-
-    itin_items.forEach(element => {
-        document.querySelector('.itinerary_entry').innerHTML += 
-        `<div class="card"><p>${element.activity}</p>
-        <p>${element.address}</p>
-        <small class="dateTime">${element.date}</small></div>`
-    }); 
+    itineraryList();
+    load();
 
     getTxt('itin_activity').value = "";
     getTxt('itin_address').value = "";
@@ -242,3 +222,13 @@ function addItineraryItem() {
 
 }
 
+function itineraryList() {
+    document.querySelector('.itinerary_entry').innerHTML = "";
+
+    itin_items.forEach(element => {
+        document.querySelector('.itinerary_entry').innerHTML += 
+        `<div class="card"><p>${element.activity}</p>
+        <p>${element.address}</p>
+        <small class="dateTime">${element.date}</small></div>`
+    }); 
+}

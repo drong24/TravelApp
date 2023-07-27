@@ -343,11 +343,31 @@ height: 25px;
     flex-wrap: wrap;
     margin: auto;
     width: 100%;
+    height: fit-content;
     
 }
 .day {
     border: 1px solid black;
     flex: 1 0 12%;
     margin: 2px;
+    padding: 5px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.eventNum {
+    border: 1px solid brown;
+    background-color: rgb(165, 42, 42, 0.8);
+    border-radius: 30px;
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    
 }
 
