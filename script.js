@@ -53,7 +53,7 @@ function load() {
         } else {
             daySquare.innerText = i - paddingDays;
             
-            daySquare.addEventListener('click', () => console.log('click'));
+            //daySquare.addEventListener('mouseover', () => console.log('click'));
         }
         //console.log(daySquare);
         calender.appendChild(daySquare);
@@ -62,16 +62,21 @@ function load() {
     let eventNum = 0;
     let calenderDays = document.querySelectorAll('.day');
     let dayEvent;
+    let hoverEvent;
+    let hoverText;
     //console.log(calenderDays);
 
     calenderDays.forEach(day => {
+        hoverEvent = document.createElement('div');
         itin_items.forEach(activity => {
             if (new Date(activity.date).getMonth() == dt.getMonth() && 
             new Date(activity.date).getFullYear() == dt.getFullYear() && 
             day.innerHTML == new Date(activity.date).getDate()) {
                 eventNum++;
-                console.log(day);
-                console.log('!!');
+                hoverEvent.innerHTML += 
+                `<div><p>${activity.activity}</p> <p>${activity.address}</p></div>`
+                console.log(hoverEvent);
+                //console.log('!!');
             }
         })
         if (eventNum != 0) {
@@ -82,6 +87,13 @@ function load() {
             day.append(dayEvent);
             //console.log(day);
             eventNum = 0;
+            day.classList.add('hover');
+            day.append(hoverEvent);
+            day.addEventListener('mouseover', () => {
+                console.log('hoverEvent');
+                hoverEvent.classList.add('itin_hover');
+                
+            });
         }
     })
 }

@@ -374,6 +374,9 @@ height: 25px;
     justify-content: center;
     margin-right: auto;
     margin-left: auto;
+}
+
+.hover:hover {
     
 }
 
