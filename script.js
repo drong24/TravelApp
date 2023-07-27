@@ -43,17 +43,17 @@ function load() {
 
     calender.innerHTML = '';
 
-    
-    for(let i = 1; i <= paddingDays + daysInMonth; i++) {
+    console.log(daysInMonth);
+    for(let i = 1; i <= 42; i++) {
         const daySquare = document.createElement('div');
         daySquare.classList.add('day');
 
-        if (i > paddingDays) {
+        if (i <= paddingDays || i > (daysInMonth + paddingDays)) {
+            daySquare.classList.add('padding');
+        } else {
             daySquare.innerText = i - paddingDays;
             
             daySquare.addEventListener('click', () => console.log('click'));
-        } else {
-            daySquare.classList.add('padding');
         }
         console.log(daySquare);
         calender.appendChild(daySquare);
