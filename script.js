@@ -63,7 +63,8 @@ function load() {
     let calenderDays = document.querySelectorAll('.day');
     let dayEvent;
     let hoverEvent;
-    let hoverText;
+    let hoverNodes;
+    let lastNode;
     //console.log(calenderDays);
 
     calenderDays.forEach(day => {
@@ -90,13 +91,16 @@ function load() {
             day.classList.add('hover');
             hoverEvent.classList.add('itin_hover');
             day.append(hoverEvent);
+
+            hoverNodes = document.querySelectorAll('.itin_hover');
+            lastNode = hoverNodes[hoverNodes.length - 1];
+
             day.addEventListener('mouseover', () => {
-                console.log('hoverEvent');
-                document.querySelector('.itin_hover').style.display = 'block';                
+                console.log(lastNode);
+                day.lastChild.style.display = 'block';
             });
             day.addEventListener('mouseout', () => {
-                document.querySelector('.itin_hover').style.display = 'none';                
-            });
+                day.lastChild.style.display = 'none';            });
         }
     })
 }
