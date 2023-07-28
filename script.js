@@ -65,6 +65,7 @@ function load() {
     let hoverEvent;
     let hoverNodes;
     let lastNode;
+    let addressLink;
     //console.log(calenderDays);
 
     calenderDays.forEach(day => {
@@ -75,8 +76,11 @@ function load() {
             day.innerHTML == new Date(activity.date).getDate()) {
                 eventNum++;
                 hoverEvent.innerHTML += 
-                `<div><p>${activity.activity}</p> <p>${activity.address}</p></div>`
-                console.log(hoverEvent);
+                `<div><p>${activity.activity}</p> <a id="activity_address">${activity.address}</a></div>`
+                //addressLink = document.getElementById('activity_address');
+                //addressLink.setAttribute("href", `https://maps.google.com/?q=${activity.address}`);
+                //addressLink.removeAttribute('id');
+                //console.log(hoverEvent);
                 //console.log('!!');
             }
         })
@@ -90,7 +94,7 @@ function load() {
             eventNum = 0;
             day.classList.add('hover');
             hoverEvent.classList.add('itin_hover');
-            
+
             if (Array.prototype.indexOf.call(day.parentElement.childNodes, day) >= 35) {
                 hoverEvent.classList.add('last_row');
                 console.log('added!');
@@ -252,7 +256,8 @@ function itineraryList() {
     itin_items.forEach(element => {
         document.querySelector('.itinerary_entry').innerHTML += 
         `<div class="card"><p>${element.activity}</p>
-        <p>${element.address}</p>
-        <small class="dateTime">${element.date}</small></div>`
+        <a href="https://maps.google.com/?q=${element.address}">${element.address}</a>
+        <small class="dateTime">${element.date}</small></div>`;
+
     }); 
 }
