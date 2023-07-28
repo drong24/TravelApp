@@ -76,10 +76,8 @@ function load() {
             day.innerHTML == new Date(activity.date).getDate()) {
                 eventNum++;
                 hoverEvent.innerHTML += 
-                `<div><p>${activity.activity}</p> <a id="activity_address">${activity.address}</a></div>`
-                //addressLink = document.getElementById('activity_address');
-                //addressLink.setAttribute("href", `https://maps.google.com/?q=${activity.address}`);
-                //addressLink.removeAttribute('id');
+                `<div><p>${activity.activity}</p> <a href="https://maps.google.com/?q=${activity.address}" target="_blank">${activity.address}</a></div>`
+
                 //console.log(hoverEvent);
                 //console.log('!!');
             }
