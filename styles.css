@@ -309,8 +309,8 @@ height: 25px;
 .itinerary_entry {
     font-size: small;
     height: 415px;
-    width: 634px;
-    overflow: scroll;
+    width: 1009.59px;
+    overflow: scroll;  
 }
 
 #calender_header {
@@ -330,7 +330,8 @@ height: 25px;
     justify-content: space-between;
     font-size: 14px;
     width: 100%;
-    padding: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
 
 }
 .weekday {
