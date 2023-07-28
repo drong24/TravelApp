@@ -142,9 +142,8 @@ button:hover {
     animation-delay: .5s;
     animation-fill-mode: forwards;
     align-items: center;
-    height: auto;
+    height: 50%;
     width: auto;
-    padding-top: 130px;
 }
 
 .journal_entry {
@@ -283,7 +282,7 @@ textarea {
 }
 
 #itin_date {
-    width: auto;
+    width: fit-content;
     height: 25px;
     color: aliceblue;
     background-color: transparent;
@@ -298,11 +297,11 @@ textarea {
     cursor: pointer;
 }
 #itin_activity {
-width: 561px;
+width: 80%;
 height: 25px;
 }
 #itin_address {
-width: 561px;
+width: 80%;
 height: 25px;
 }
 
