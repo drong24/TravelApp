@@ -256,7 +256,7 @@ function itineraryList() {
     itin_items.forEach(element => {
         document.querySelector('.itinerary_entry').innerHTML += 
         `<div class="card"><p>${element.activity}</p>
-        <a href="https://maps.google.com/?q=${element.address}">${element.address}</a>
+        <a href="https://maps.google.com/?q=${element.address}" target="_blank">${element.address}</a>
         <small class="dateTime">${element.date}</small></div>`;
 
     }); 
