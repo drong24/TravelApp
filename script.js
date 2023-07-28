@@ -76,7 +76,9 @@ function load() {
             day.innerHTML == new Date(activity.date).getDate()) {
                 eventNum++;
                 hoverEvent.innerHTML += 
-                `<div><p>${activity.activity}</p> <a href="https://maps.google.com/?q=${activity.address}" target="_blank">${activity.address}</a></div>`
+                `<div><p style="text-decoration:underline; font-size:16px";>${activity.activity}</p> 
+                <a href="https://maps.google.com/?q=${activity.address}" target="_blank" 
+                style="font-size:13px" >${activity.address}</a></div>`
 
                 //console.log(hoverEvent);
                 //console.log('!!');
@@ -95,7 +97,7 @@ function load() {
 
             if (Array.prototype.indexOf.call(day.parentElement.childNodes, day) >= 35) {
                 hoverEvent.classList.add('last_row');
-                console.log('added!');
+                //console.log('added!');
             }
             day.append(hoverEvent);
 
