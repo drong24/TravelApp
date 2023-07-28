@@ -381,11 +381,17 @@ height: 25px;
     position: absolute;
     z-index: 500;
     background-color: rgba(250, 235, 215, 0.6);
-    height: 200px;
-    width: 100px;
+    height: 140px;
+    width: 150px;
     overflow: scroll;
     border: 1px solid black;
+    bottom: auto;
+    right: auto;
 
+}
+
+.last_row {
+    bottom: 0%;
 }
 
 

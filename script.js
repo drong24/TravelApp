@@ -90,6 +90,11 @@ function load() {
             eventNum = 0;
             day.classList.add('hover');
             hoverEvent.classList.add('itin_hover');
+            
+            if (Array.prototype.indexOf.call(day.parentElement.childNodes, day) >= 35) {
+                hoverEvent.classList.add('last_row');
+                console.log('added!');
+            }
             day.append(hoverEvent);
 
             hoverNodes = document.querySelectorAll('.itin_hover');
