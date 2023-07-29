@@ -53,28 +53,22 @@
 <script>
     var BudgetCata = {Lodging: 0, Transportation: 0, Food: 0, Others: 0};
     const ctx = document.getElementById('myChart');
-    
-    var chart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-          labels: ['Lodging', 'Transportation', 'Food', 'Others'],
-          datasets: [{
-            label: 'Amount Spent',
+    const data = {
+        labels: ['Lodging', 'Transportation', 'Food', 'Others'],
+        datasets: [{
+            label: 'Budget',
             data: [BudgetCata.Lodging, BudgetCata.Transportation, BudgetCata.Food, BudgetCata.Others],
             backgroundColor: ['rgb(255, 0, 0, 0.4)', 'rgb(255, 98, 0, 0.4)', 'rgb(242, 255, 0, 0.4)', 'rgb(158, 50, 168, 0.4)'],
-
-        }],
-      },
+            hoverOffset: 4
+        }]  
+    };
+    var chart = new Chart(ctx, {
+      type: 'doughnut',
+      data: data,
       options: {
         responsive: true,
-        maintainAspectRatio: true,
-        scales: {
-          y: {
-            beginAtZero: true
-            
-          }
-        }
-      },
+        //maintainAspectRatio: true,
+      }
     });
     //console.log(Lodging.valueOf());
 
