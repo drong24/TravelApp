@@ -158,7 +158,7 @@ width: 550px;
 
 #budget_content {
 display: flex;
-flex-direction: column;
+flex-direction: row;
 height: 45%;
 padding: 0px;
 }
@@ -216,8 +216,14 @@ textarea {
     align-items: left;
 }
 #budget_enter {
-    display: flex;
-    flex-basis: 20%;
+    position: absolute;
+    justify-content: center;
+    z-index: 500;
+    background-color: rgb(32 32 32 / 92%);
+    padding: 20px;
+    flex-direction: column;
+    top: 0;
+    left: 25%;
 }
 #budget_enter label{
     font-size: small;
