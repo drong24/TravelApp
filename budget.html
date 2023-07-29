@@ -38,6 +38,8 @@
                     <label>Amount</label><textarea class="budget_amount"></textarea>
                     <!-- <label>Date</label><input type="datetime-local" class="budget_date"> -->
                     <button class="budget_button small_button" onclick="AddBudgetItem()">Add Expense</button>
+                    <button class="budget_button small_button" onclick="addBudget()">Cancel</button>
+
                 </div>
                 <div id="budget_spacer"></div>
                 <div class="budget_entry">
@@ -51,6 +53,7 @@
 </body>
 
 <script>
+    var totalAmount;
     var BudgetCata = {Lodging: 0, Transportation: 0, Food: 0, Others: 0};
     const ctx = document.getElementById('myChart');
     const data = {
@@ -68,7 +71,26 @@
       options: {
         responsive: true,
         //maintainAspectRatio: true,
-      }
+      },
+      plugins: [{
+          id: 'text',
+          beforeDraw: function(chart, a, b) {
+            var width = chart.width,
+                height = chart.height,
+                ctx = chart.ctx;
+
+            ctx.restore();
+            var fontSize = (height / 114).toFixed(2);
+            ctx.textBaseline = "middle"; 
+            totalAmount = BudgetCata.Lodging + BudgetCata.Transportation + BudgetCata.Food + BudgetCata.Others;
+            var text = '$' + totalAmount,
+                textX = Math.round((width - ctx.measureText(text).width) / 2),
+                textY = height / 2;
+
+            ctx.fillText(text, textX, textY);
+            ctx.save();
+          }
+      }]
     });
     //console.log(Lodging.valueOf());
 
@@ -100,5 +122,6 @@
         chart.data.datasets[0].data = [BudgetCata.Lodging, BudgetCata.Transportation, BudgetCata.Food, BudgetCata.Others];
         chart.update();
     }
+
   </script>
    
