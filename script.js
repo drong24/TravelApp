@@ -105,7 +105,7 @@ function load() {
             lastNode = hoverNodes[hoverNodes.length - 1];
 
             day.addEventListener('mouseover', () => {
-                console.log(lastNode);
+                //console.log(lastNode);
                 day.lastChild.style.display = 'block';
             });
             day.addEventListener('mouseout', () => {
