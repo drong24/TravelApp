@@ -83,7 +83,7 @@
             var fontSize = (height / 114).toFixed(2);
             ctx.textBaseline = "middle"; 
             totalAmount = BudgetCata.Lodging + BudgetCata.Transportation + BudgetCata.Food + BudgetCata.Others;
-            var text = '$' + totalAmount,
+            var text = 'Total: $' + totalAmount,
                 textX = Math.round((width - ctx.measureText(text).width) / 2),
                 textY = height / 2;
 
