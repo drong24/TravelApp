@@ -184,11 +184,11 @@ function addExp() {
     `<div class="card"><p>${catagory.value}</p>
     <p>${amount.value}</p>
     <small class="dateTime">${date.value}</small></div>`
-    /*
+    
     amount.value = '';
     catagory.value = '';
     date.value = 'mm/dd/yyyy';
-    */
+    
     //add script to add amount to chosen catagory 
 
     console.log(amount.value);

@@ -36,15 +36,13 @@
                         <option>Others</option>
                     </select>     
                     <label>Amount</label><textarea class="budget_amount"></textarea>
-                    <!-- <label>Date</label><input type="datetime-local" class="budget_date"> -->
+                    <label>Date</label><input type="datetime-local" class="budget_date">
                     <button class="budget_button small_button" onclick="AddBudgetItem()">Add Expense</button>
                     <button class="budget_button small_button" onclick="addBudget()">Cancel</button>
-
                 </div>
                 <div id="budget_spacer"></div>
                 <div class="budget_entry">
                     
-
                 </div>
             </div>
         </div>
@@ -72,6 +70,57 @@
       data: data,
       options: {
         responsive: true,
+        onClick: (e, activeEls) => {
+            console.log(e);
+            console.log(activeEls[0]);
+            //let dsIndex = activeEls[0]._datasetIndex;
+            //console.log(dsIndex);
+            let dataIndex = activeEls[0]._index;
+            let indexValue = (dataIndex == '0') ? 'Lodging' : 
+                (dataIndex == '1') ? 'Transportation' :
+                (dataIndex == '2') ? 'Food' : 'Other';
+            //console.log(dataIndex);
+            //console.log(budgetItems);
+            //console.log(budgetItems[0].catagory);
+
+            const amount = document.querySelector('.budget_amount').value;
+            const catagory = document.querySelector('.budget_catag').value;
+            const date = document.querySelector('.budget_date');
+            document.querySelector('.budget_entry').innerHTML = '';
+
+            budgetItems.forEach(item => {
+                if(item.catagory == indexValue) {
+                    document.querySelector('.budget_entry').innerHTML += 
+                    `<div class="card"><p>${item.catagory}</p>
+                    <p>${item.amount}</p>
+                    <small class="dateTime">${item.date}</small></div>`
+                }
+            });
+            
+            switch(dataIndex) {
+                case '0':
+                    console.log('0');
+                    break;
+                case '1':
+                    console.log('1');
+                    break;
+                case '2':
+                    console.log('2');
+                    break;
+                case '3':
+                    console.log('3');
+                    break;
+                default:
+                    console.log('should not show 1');
+            }
+            /*
+            let datasetLabel = chart.data.datasets[dsIndex] //e.chart.data.datasets[datasetIndex].label;
+            console.log(datasetLabel);
+            let value = e.chart.data.datasets[dsIndex].data[dataIndex];
+            console.log("In click", datasetLabel, value);
+            //link to url with:[chartIds]      
+            */      
+        }
         //maintainAspectRatio: true,
       },
       plugins: [{
@@ -99,32 +148,40 @@
     function AddBudgetItem() {
         const amount = document.querySelector('.budget_amount').value;
         const catagory = document.querySelector('.budget_catag').value;
+        const date = document.querySelector('.budget_date').value;
+
 
         switch (catagory) {
             case 'Transportation': 
             BudgetCata.Transportation += parseInt(amount);
-            budgetItems.push({catagory, amount});
-            console.log(budgetItems);
+            budgetItems.push({catagory, amount, date});
+            //console.log(budgetItems);
             break;
 
             case 'Lodging': 
             BudgetCata.Lodging += parseInt(amount);
-            budgetItems.push({catagory, amount});
+            budgetItems.push({catagory, amount, date});
             break;
 
             case 'Others': 
             BudgetCata.Others += parseInt(amount);
-            budgetItems.push({catagory, amount});
+            budgetItems.push({catagory, amount, date});
             break;
 
             case 'Food': 
             BudgetCata.Food += parseInt(amount);
-            budgetItems.push({catagory, amount});
+            budgetItems.push({catagory, amount, date});
             break;
 
             default: 
             console.log('should not show');
         };
+
+        console.log(budgetItems);
+
+        amount.value = '';
+        catagory.value = '';
+        date.value = 'mm/dd/yyyy';
  
         chart.data.datasets[0].data = [BudgetCata.Lodging, BudgetCata.Transportation, BudgetCata.Food, BudgetCata.Others];
         chart.update();
