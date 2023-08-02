@@ -159,7 +159,7 @@ width: 550px;
 #budget_content {
 display: flex;
 flex-direction: row;
-height: 45%;
+height: 70%;
 padding: 0px;
 }
 
@@ -209,10 +209,13 @@ textarea {
 
 .budget_entry {
     font-size: 12px;
+    height: 90%;
+    overflow: scroll;
 }
 
 .budget_items {
     width: 482px;
+    height: 100%;
     align-items: left;
 }
 #budget_enter {
