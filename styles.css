@@ -233,6 +233,12 @@ textarea {
     display: flex;
     width: 482px;
     }
+
+.budget_catagory {
+    display: flex;
+    margin: 15px;
+}
+
 .budget_amount {
     width: 100px;
     height: 25px;

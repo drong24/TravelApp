@@ -27,16 +27,24 @@
             <div class="budget_items">
                 <button onclick="addBudget()" class="small_button">+ Add Entry</button>
                 <div id="budget_enter">
-                    <label>Catagory</label>          
-                    <select class="budget_catag">
-                        <option></option>
-                        <option>Lodging</option>
-                        <option>Transportation</option>
-                        <option>Food</option>
-                        <option>Others</option>
-                    </select>     
-                    <label>Amount</label><textarea class="budget_amount"></textarea>
-                    <label>Date</label><input type="datetime-local" class="budget_date">
+                    <div class="budget_catagory">
+                        <label>Catagory</label>          
+                        <select class="budget_catag">
+                            <option></option>
+                            <option>Lodging</option>
+                            <option>Transportation</option>
+                            <option>Food</option>
+                            <option>Others</option>
+                        </select>   
+                    </div>
+                    <div class="budget_catagory">
+                        <label>Amount</label>
+                        <textarea class="budget_amount"></textarea>
+                    </div>
+                    <div class="budget_catagory">
+                        <label>Date</label>
+                        <input type="datetime-local" class="budget_date">
+                    </div>
                     <button class="budget_button small_button" onclick="AddBudgetItem()">Add Expense</button>
                     <button class="budget_button small_button" onclick="addBudget()">Cancel</button>
                 </div>
