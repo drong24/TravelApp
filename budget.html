@@ -98,13 +98,13 @@
             const amount = document.querySelector('.budget_amount').value;
             const catagory = document.querySelector('.budget_catag').value;
             const date = document.querySelector('.budget_date');
-            document.querySelector('.budget_entry').innerHTML = '';
+            const label = document.getElementById('budget_label');
+            document.querySelector('.budget_entry').innerHTML = `<div>${indexValue}</div>`;
 
             budgetItems.forEach(item => {
                 if(item.catagory == indexValue) {
                     document.querySelector('.budget_entry').innerHTML += 
-                    `<div class="card"><p>${item.catagory}</p>
-                    <p>${item.amount}</p>
+                    `<div class="card"><p>${item.label}: $${item.amount}</p>
                     <small class="dateTime">${item.date}</small></div>`
                 }
             });
@@ -161,28 +161,29 @@
         const amount = document.querySelector('.budget_amount').value;
         const catagory = document.querySelector('.budget_catag').value;
         const date = document.querySelector('.budget_date').value;
+        const label = document.getElementById('budget_label').value;
 
 
         switch (catagory) {
             case 'Transportation': 
             BudgetCata.Transportation += parseInt(amount);
-            budgetItems.push({catagory, amount, date});
+            budgetItems.push({catagory, label, amount, date});
             //console.log(budgetItems);
             break;
 
             case 'Lodging': 
             BudgetCata.Lodging += parseInt(amount);
-            budgetItems.push({catagory, amount, date});
+            budgetItems.push({catagory, label, amount, date});
             break;
 
             case 'Others': 
             BudgetCata.Others += parseInt(amount);
-            budgetItems.push({catagory, amount, date});
+            budgetItems.push({catagory, label, amount, date});
             break;
 
             case 'Food': 
             BudgetCata.Food += parseInt(amount);
-            budgetItems.push({catagory, amount, date});
+            budgetItems.push({catagory, label, amount, date});
             break;
 
             default: 
