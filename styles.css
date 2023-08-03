@@ -249,6 +249,10 @@ textarea {
     background: transparent;
     
 }
+#budget_label {
+    width: 200px;
+    height: 25px;
+}
 
 .budget_graph {
     width: 500px;
