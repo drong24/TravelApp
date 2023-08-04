@@ -147,8 +147,38 @@ button:hover {
     top: 22%;
 }
 
+#journal_content {
+    display: flex;
+    width: 90%;
+    height: 72%;
+}
+
+#journal_sidebar {
+    position: relative;
+    margin: 15px;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#journal_button {
+    height: 40px;
+    width: 100%;
+}
+
+#journal_list {
+    height: 100%;
+}
+
+#journal_note {
+    width: 85%;
+    height: 100%;
+}
+
 .journal_entry {
-width: 550px;
+width: 100%;
+height: 100%;
 }
 
 #journal_spacer {
