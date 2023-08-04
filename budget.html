@@ -109,22 +109,6 @@
                 }
             });
             
-            switch(dataIndex) {
-                case '0':
-                    console.log('0');
-                    break;
-                case '1':
-                    console.log('1');
-                    break;
-                case '2':
-                    console.log('2');
-                    break;
-                case '3':
-                    console.log('3');
-                    break;
-                default:
-                    console.log('should not show 1');
-            }
             /*
             let datasetLabel = chart.data.datasets[dsIndex] //e.chart.data.datasets[datasetIndex].label;
             console.log(datasetLabel);
@@ -163,26 +147,25 @@
         const date = document.querySelector('.budget_date').value;
         const label = document.getElementById('budget_label').value;
 
-
         switch (catagory) {
             case 'Transportation': 
-            BudgetCata.Transportation += parseInt(amount);
+            BudgetCata.Transportation += parseFloat(parseFloat(amount).toFixed(2));
             budgetItems.push({catagory, label, amount, date});
             //console.log(budgetItems);
             break;
 
             case 'Lodging': 
-            BudgetCata.Lodging += parseInt(amount);
+            BudgetCata.Lodging += parseFloat(parseFloat(amount).toFixed(2));
             budgetItems.push({catagory, label, amount, date});
             break;
 
             case 'Others': 
-            BudgetCata.Others += parseInt(amount);
+            BudgetCata.Others += parseFloat(parseFloat(amount).toFixed(2));
             budgetItems.push({catagory, label, amount, date});
             break;
 
             case 'Food': 
-            BudgetCata.Food += parseInt(amount);
+            BudgetCata.Food += parseFloat(parseFloat(amount).toFixed(2));
             budgetItems.push({catagory, label, amount, date});
             break;
 
