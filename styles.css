@@ -169,6 +169,7 @@ button:hover {
 
 #journal_list {
     height: 100%;
+    overflow: scroll;
 }
 
 #journal_note {
