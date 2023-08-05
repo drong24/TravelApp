@@ -182,6 +182,11 @@ width: 100%;
 height: 100%;
 }
 
+.--selected {
+    font-weight: 900;
+    color: black;
+}
+
 #journal_spacer {
     width: 600px;
     height: 119.5px;

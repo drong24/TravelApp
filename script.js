@@ -145,6 +145,16 @@ function getRs() {
 function addText() {
     var list = document.getElementById('journal_list');
     var node = document.createElement('div');
+    node.addEventListener("click", () => {
+        console.log('clicked!');
+        let selectedElement = document.querySelector('.--selected');
+        if (selectedElement != null) {
+            console.log('removed');
+            selectedElement.classList.remove('--selected');
+        }
+        
+        node.classList.add('--selected');
+    });
     var newText = document.createTextNode("Testing");
     node.appendChild(newText);
     list.insertBefore(node, list.firstChild);
