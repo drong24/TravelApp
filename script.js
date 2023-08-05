@@ -145,16 +145,35 @@ function getRs() {
 function addText() {
     var list = document.getElementById('journal_list');
     var node = document.createElement('div');
-    node.classList.add('entry_preview')
+    let noteId = Math.floor(Math.random() * 1000000);
+
+    node.classList.add('entry_preview', noteId);
+
+    //creates a new textarea
+    document.getElementById('journal_note').insertAdjacentHTML('beforeend', `<textarea class='journal_entry ${noteId}'></textarea>`);
+
+    //adds event listener to show related text area when clicked
     node.addEventListener("click", () => {
-        console.log('clicked!');
         let selectedElement = document.querySelector('.--selected');
         if (selectedElement != null) {
-            console.log('removed');
+            //console.log('removed');
             selectedElement.classList.remove('--selected');
         }
-        
         node.classList.add('--selected');
+
+        //takes all textarea in journal_list, changes their display to none,
+        //then sets display to block for the selected element only
+        let allNotes = document.querySelectorAll('.journal_entry');
+        console.log(allNotes);
+        allNotes.forEach(note => {
+            if(note.classList.contains(node.classList[1])) {
+                note.style.display = 'block';
+            }
+            else {
+                note.style.display = 'none';
+            }
+        });
+
     });
     var newText = `<p>New Entry</p><small class='datetime'>${new Date().toDateString()}</small>`;
     node.insertAdjacentHTML('beforeend', newText);
