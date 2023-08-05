@@ -170,6 +170,14 @@ button:hover {
 #journal_list {
     height: 100%;
     overflow: scroll;
+    font-size: 15px;
+}
+
+.entry_preview {
+    border: 1px solid rgb(165, 42, 42, 0.8);
+    padding: 5px;
+    margin: 5px;
+
 }
 
 #journal_note {
@@ -184,7 +192,7 @@ height: 100%;
 
 .--selected {
     font-weight: 900;
-    color: black;
+    background-color: rgb(240, 248, 255, .25);    
 }
 
 #journal_spacer {

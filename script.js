@@ -145,6 +145,7 @@ function getRs() {
 function addText() {
     var list = document.getElementById('journal_list');
     var node = document.createElement('div');
+    node.classList.add('entry_preview')
     node.addEventListener("click", () => {
         console.log('clicked!');
         let selectedElement = document.querySelector('.--selected');
@@ -155,8 +156,8 @@ function addText() {
         
         node.classList.add('--selected');
     });
-    var newText = document.createTextNode("Testing");
-    node.appendChild(newText);
+    var newText = `<p>New Entry</p><small class='datetime'>${new Date().toDateString()}</small>`;
+    node.insertAdjacentHTML('beforeend', newText);
     list.insertBefore(node, list.firstChild);
 
 }
