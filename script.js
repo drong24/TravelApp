@@ -150,7 +150,8 @@ function addText() {
     node.classList.add('entry_preview', noteId);
 
     //creates a new textarea
-    document.getElementById('journal_note').insertAdjacentHTML('beforeend', `<textarea class='journal_entry ${noteId}'></textarea>`);
+    document.getElementById('journal_note').insertAdjacentHTML('beforeend', 
+    `<textarea class='journal_title ${noteId}'>New Entry</textarea><textarea class='journal_entry ${noteId}'></textarea>`);
 
     //adds event listener to show related text area when clicked
     node.addEventListener("click", () => {
@@ -163,8 +164,9 @@ function addText() {
 
         //takes all textarea in journal_list, changes their display to none,
         //then sets display to block for the selected element only
-        let allNotes = document.querySelectorAll('.journal_entry');
-        console.log(allNotes);
+        let allNotes = document.querySelectorAll('.journal_title, .journal_entry');
+        
+        //console.log(allNotes);
         allNotes.forEach(note => {
             if(note.classList.contains(node.classList[1])) {
                 note.style.display = 'block';
