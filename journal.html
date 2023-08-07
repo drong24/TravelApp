@@ -43,18 +43,16 @@
         let selected = document.querySelector('.--selected');
         if (selected != null) {
             selectedPreview = selected.querySelector('p');
-            console.log(selectedPreview)
         }
         
         if (selectedNote != null) {
-            console.log(selectedNote.value);
             selectedPreview.innerHTML = selectedNote.value;
         }
         else {
             console.log("is null");
             
         }
-    }, 5000);
+    }, 3000);
 
     function findSelectedItem() {
         let noteList = document.querySelectorAll('.journal_title');

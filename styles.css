@@ -1,5 +1,5 @@
 * {
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -150,7 +150,8 @@ button:hover {
 #journal_content {
     display: flex;
     width: 90%;
-    height: 72%;
+    height: 70%;
+    margin-top: 35px;
 }
 
 #journal_sidebar {
@@ -178,6 +179,7 @@ button:hover {
     padding: 5px;
     margin: 5px;
     overflow: hidden;
+    background-color: #a52a2a30;;
 
 }
 
@@ -192,12 +194,15 @@ button:hover {
     display: none;
     font-size: 100%;
     overflow: hidden;
+    background-color: #a52a2a30;;
 }
 
 .journal_entry {
     width: 100%;
     height: 90%;
     display: none;
+    margin-top: 5px;
+    background-color: #a52a2a30;;
 }
 
 .--selected {
