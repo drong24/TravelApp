@@ -191,10 +191,50 @@ function addText() {
         });
 
     });
-    var newText = `<p>New Entry</p><small class='datetime'>${new Date().toDateString()}</small>`;
+    var newText = `<p>New Entry</p><small class='datetime'>${new Date().toDateString()}</small>
+        <button class="tiny_button delete_button" onclick="deleteNote(this)" "></button>`;
     node.insertAdjacentHTML('beforeend', newText);
     list.insertBefore(node, list.firstChild);
 
+}
+
+function deleteNote(buttonItem) {
+    let itemToDelete = buttonItem.parentElement.classList[1];
+    console.log(itemToDelete);
+
+    let selecteNode = document.querySelector(".--selected");
+    let selectedItems = findSelectedItem(itemToDelete);
+    selectedItems.forEach(item => {
+        item.remove();
+    });
+    buttonItem.parentElement.remove();
+    console.log('deleted!');
+}
+
+function findSelectedItem(item) {
+    console.log(item);
+    let noteList = document.querySelectorAll('.journal_title, .journal_entry');
+    let selected = document.querySelector('.--selected');
+    let returnValue = [];
+    if (item != null) {
+        noteList.forEach(note => {
+            if (note.classList.contains(item)) {
+                returnValue.push(note);
+            }
+        });
+    }
+    else if (selected != null) {
+    noteList.forEach(note => {
+        if (note.classList.contains(selected.classList[1])) {
+            returnValue.push(note);
+        }
+    });
+    }
+    else {
+        console.log("selected is null");
+    }
+    console.log(returnValue);
+    return returnValue;
 }
 
 function addBudget() {

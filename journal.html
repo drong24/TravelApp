@@ -43,31 +43,14 @@
             selectedPreview = selected.querySelector('p');
         }
         
-        if (selectedNote != null) {
-            selectedPreview.innerHTML = selectedNote.value;
+        if (selectedNote.length > 0) {
+            selectedPreview.innerHTML = selectedNote[0].value;
         }
         else {
-            console.log("is null");
+            //console.log("is null");
             
         }
     }, 3000);
 
-    function findSelectedItem() {
-        let noteList = document.querySelectorAll('.journal_title');
-        let selected = document.querySelector('.--selected');
-        let returnValue;
-
-        if (selected != null) {
-        noteList.forEach(note => {
-            if (note.classList.contains(selected.classList[1])) {
-                returnValue = note;
-            }
-        });
-        }
-        else {
-            console.log("selected is null");
-        }
-        return returnValue;
-    }
 </script>
 </html>
