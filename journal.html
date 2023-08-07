@@ -24,7 +24,6 @@
                 <div id="journal_list"></div>
             </div>
             <div id="journal_note">
-                <textarea class="journal_entry" id="txtIn"></textarea>
             </div>
             <!--
             <div id="enter">
@@ -37,4 +36,42 @@
     </div>
 
 </body>
+
+<script>
+    setInterval(() => {
+        let selectedNote = findSelectedItem();
+        let selected = document.querySelector('.--selected');
+        if (selected != null) {
+            selectedPreview = selected.querySelector('p');
+            console.log(selectedPreview)
+        }
+        
+        if (selectedNote != null) {
+            console.log(selectedNote.value);
+            selectedPreview.innerHTML = selectedNote.value;
+        }
+        else {
+            console.log("is null");
+            
+        }
+    }, 5000);
+
+    function findSelectedItem() {
+        let noteList = document.querySelectorAll('.journal_title');
+        let selected = document.querySelector('.--selected');
+        let returnValue;
+
+        if (selected != null) {
+        noteList.forEach(note => {
+            if (note.classList.contains(selected.classList[1])) {
+                returnValue = note;
+            }
+        });
+        }
+        else {
+            console.log("selected is null");
+        }
+        return returnValue;
+    }
+</script>
 </html>
