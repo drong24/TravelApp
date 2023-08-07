@@ -194,7 +194,8 @@ button:hover {
     display: none;
     font-size: 100%;
     overflow: hidden;
-    background-color: #a52a2a30;;
+    background-color: #a52a2a30;
+    padding-left: 5px;
 }
 
 .journal_entry {
@@ -202,7 +203,8 @@ button:hover {
     height: 90%;
     display: none;
     margin-top: 5px;
-    background-color: #a52a2a30;;
+    background-color: #a52a2a30;
+    padding: 5px;
 }
 
 .--selected {

@@ -153,6 +153,20 @@ function addText() {
     document.getElementById('journal_note').insertAdjacentHTML('beforeend', 
     `<textarea class='journal_title ${noteId}'>New Entry</textarea><textarea class='journal_entry ${noteId}'></textarea>`);
 
+    //add event listener to textarea to allow tabs to indent
+    //needs to be fixed -------------!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-----------
+    document.querySelector('.journal_entry').addEventListener('keydown', function(e) {
+        if (e.key == 'Tab') {
+            e.preventDefault();
+            var start = this.selectionStart;
+            var end = this.selectionEnd;
+
+            this.value = this.value.substring(0, start) + "\t" + this.value.substring(end);
+
+            this.selectionStart = this.selectionEnd = start + 1;
+        }
+    });
+
     //adds event listener to show related text area when clicked
     node.addEventListener("click", () => {
         let selectedElement = document.querySelector('.--selected');
@@ -165,7 +179,7 @@ function addText() {
         //takes all textarea in journal_list, changes their display to none,
         //then sets display to block for the selected element only
         let allNotes = document.querySelectorAll('.journal_title, .journal_entry');
-        
+
         //console.log(allNotes);
         allNotes.forEach(note => {
             if(note.classList.contains(node.classList[1])) {
