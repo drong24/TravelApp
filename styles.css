@@ -242,24 +242,6 @@ padding-top: 25px;
     border-radius: 8px;
 }
 
-.tiny_button {
-    background-color: brown;
-    border-radius: 7px;
-    padding: 3px;
-    
-}
-
-.delete_button {
-    background-color: transparent;
-    background: url(./pictures/trash.png);
-    background-size:cover;
-    background-position: center;
-    float: right;
-    width: 25px;
-    height: 25px;
-
-}
-
 textarea {
     border: brown solid 2px;
     width: 400px;
