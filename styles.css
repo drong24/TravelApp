@@ -33,9 +33,10 @@ button:hover {
     align-items: center;
     justify-content: center;
     row-gap: 50px;
-    background-image: url(./pictures/sunset-sky-3.jpeg);
-    background-size:cover;
+    
+    background-image: url(./pictures/tokyo-spring.jpeg);
     background-position: middle center;
+    
     position: relative;
     z-index: 1;
 }
