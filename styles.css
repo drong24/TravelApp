@@ -34,7 +34,8 @@ button:hover {
     justify-content: center;
     row-gap: 50px;
     
-    background-image: url(./pictures/tokyo-spring.jpeg);
+    background-image: url(./pictures/sunset_sky_2.webp);
+    background-size: cover;
     background-position: middle center;
     
     position: relative;
@@ -54,6 +55,8 @@ button:hover {
 .index_title{
     animation: fadeIn_title 5s;
     font-size: 60px;
+    position: absolute;
+    top: 15%;
 }
 .index_menu {
     font-size: 14px;
@@ -61,6 +64,8 @@ button:hover {
     justify-content: center;
     gap: 15px;
     align-items: center;
+    position: absolute;
+    top: 8%;
 }
 
 .index_menu1 {
@@ -105,22 +110,18 @@ button:hover {
 }
 
 .menu {
-    top: 38%;
+    top: 8%;
     position: fixed;
     font-size: 14px;
     display: flex;
     justify-content: center;
     gap: 15px;
     align-items: center;
-    animation: slide_up 1s;
-    animation-fill-mode: forwards;
     z-index: 2;
 }
 .title {
     font-size: 60px;
-    animation: slide_up_title 1s;
-    animation-fill-mode: forwards;
-    top: 50%;
+    top: 15%;
     position: fixed;
     z-index: 2;
 }
