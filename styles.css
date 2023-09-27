@@ -3,7 +3,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    color:aliceblue;
+    color:black;
     font-family: fantasy;
     
 }
@@ -15,7 +15,7 @@ a {
     text-decoration: inherit;
 }
 select {
-    border: brown solid 2px;
+    /*border: brown solid 2px;*/
     background: transparent;
     color: aliceblue; 
 }
@@ -34,7 +34,7 @@ button:hover {
     justify-content: center;
     row-gap: 50px;
     
-    background-image: url(./pictures/sunset_sky_2.webp);
+    /*background-image: url(./pictures/sunset_sky_2.webp);*/
     background-size: cover;
     background-position: middle center;
     
@@ -177,12 +177,16 @@ button:hover {
 }
 
 .entry_preview {
-    border: 1px solid rgb(165, 42, 42, 0.8);
+    border: 1px solid rgb(153, 76, 0, 0.8);
     padding: 5px;
     margin: 5px;
     overflow: hidden;
-    background-color: #a52a2a30;;
+    background-color: rgba(153, 76, 0, 0.188);;
 
+}
+
+.entry_preview:hover {
+    background-color: rgba(153, 76, 0, 0.388);;
 }
 
 #journal_note {
@@ -196,7 +200,7 @@ button:hover {
     display: none;
     font-size: 100%;
     overflow: hidden;
-    background-color: #a52a2a30;
+    background-color: rgba(153, 76, 0, 0.188);
     padding-left: 5px;
 }
 
@@ -205,7 +209,7 @@ button:hover {
     height: 90%;
     display: none;
     margin-top: 5px;
-    background-color: #a52a2a30;
+    background-color: rgba(153, 76, 0, 0.188);
     padding: 5px;
 }
 
@@ -236,7 +240,7 @@ padding-top: 25px;
 }
 
 .small_button {
-    background-color: brown;
+    background-color: rgb(153, 76, 0);
     border: none;
     color: white;
     padding: 3px;
@@ -244,7 +248,7 @@ padding-top: 25px;
 }
 
 textarea {
-    border: brown solid 2px;
+    border: rgb(153, 76, 0) solid 2px;
     width: 400px;
     height: 100px;
    color: aliceblue;
@@ -289,7 +293,7 @@ textarea {
     position: absolute;
     justify-content: center;
     z-index: 500;
-    background-color: rgb(32 32 32 / 92%);
+    background-color: rgba(153, 76, 0, 0.8);
     padding: 20px;
     flex-direction: column;
     top: 0;
