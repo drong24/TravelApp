@@ -53,7 +53,11 @@
                     </div>
                     <div class="budget_catagory">
                         <label>Amount</label>
-                        <textarea class="budget_amount"></textarea>
+                        <label id="dollar_sign">$</label>
+                        <div id="amount_enter">
+                            <textarea class="budget_amount"></textarea>
+                            <div id="amount_error">Must be a valid number</div>
+                        </div>
                     </div>
                     <div class="budget_catagory">
                         <label>Date</label>
@@ -121,7 +125,7 @@
             var fontSize = (height / 114).toFixed(2);
             ctx.textBaseline = "middle"; 
             totalAmount = BudgetCata.Lodging + BudgetCata.Transportation + BudgetCata.Food + BudgetCata.Others;
-            var text = 'Total: $' + totalAmount,
+            var text = 'Total: $' + totalAmount.toFixed(2),
                 textX = Math.round((width - ctx.measureText(text).width) / 2),
                 textY = height / 2;
 
@@ -133,13 +137,23 @@
     //console.log(Lodging.valueOf());
 
     function AddBudgetItem() {
+        let errorMsg = document.getElementById('amount_error');
+
         const amount = document.querySelector('.budget_amount').value;
         const catagory = document.querySelector('.budget_catag').value;
         const date = document.querySelector('.budget_date').value;
         const label = document.getElementById('budget_label').value;
         let inputAmount;
 
-        switch (catagory) {
+        if (isNaN(amount)) {
+            errorMsg.style.display = 'flex';
+        }
+        else {
+            if (errorMsg.style.display == 'flex') {
+                errorMsg.style.display = 'none'
+            }
+            switch (catagory) {
+
             case 'Transportation': 
             inputAmount = parseFloat(parseFloat(amount).toFixed(2));
             BudgetCata.Transportation += inputAmount;
@@ -184,8 +198,7 @@
  
         chart.data.datasets[0].data = [BudgetCata.Lodging, BudgetCata.Transportation, BudgetCata.Food, BudgetCata.Others];
         chart.update();
-
-
+        }
     }
 
     function showChartDetails(a) {   
