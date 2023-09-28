@@ -17,10 +17,12 @@ a {
 select {
     /*border: brown solid 2px;*/
     background: transparent;
-    color: aliceblue; 
+    color: black; 
+    padding-top: 3px;
 }
+
 button:hover {
-    background-color: rgb(195, 49, 49);
+    background-color: rgb(171, 139, 117);
     cursor: pointer;
     
 }
@@ -240,20 +242,32 @@ padding-top: 25px;
 }
 
 .small_button {
-    background-color: rgb(153, 76, 0);
+    background-color: rgb(212, 164, 129);
     border: none;
     color: white;
     padding: 3px;
     border-radius: 8px;
 }
 
+.add_item_button {
+    width: 25px;
+    height: 25px;
+    border-radius: 8px;
+    background-color: rgb(215, 215, 215);
+
+}
+
 textarea {
-    border: rgb(153, 76, 0) solid 2px;
     width: 400px;
     height: 100px;
-   color: aliceblue;
+   color: black;
    background: transparent;
-   
+   resize: none;
+   padding: 3px;
+}
+
+input:focus, textarea, select{
+    outline: none;
 }
 
 #entry {
@@ -271,7 +285,7 @@ textarea {
 }
 
 .dateTime {
-   color: rgb(254, 209, 161);
+   color: black;
 }
 
 #entry {
@@ -280,7 +294,7 @@ textarea {
 
 .budget_entry {
     font-size: 12px;
-    height: 90%;
+    height: 42%;
     overflow: scroll;
 }
 
@@ -290,10 +304,6 @@ textarea {
     align-items: left;
 }
 #budget_enter {
-    position: absolute;
-    justify-content: center;
-    z-index: 500;
-    background-color: rgba(153, 76, 0, 0.8);
     padding: 20px;
     flex-direction: column;
     top: 0;
@@ -315,13 +325,13 @@ textarea {
     height: 25px;
 }
 .budget_date {
-    width: 100px;
+    width: 175px;
     height: 25px;
     background: transparent;
     
 }
 #budget_label {
-    width: 200px;
+    width: 800px;
     height: 25px;
 }
 
@@ -376,11 +386,11 @@ textarea {
 #itin_date {
     width: fit-content;
     height: 25px;
-    color: aliceblue;
+    color: black;
     background-color: transparent;
 }
 #itin_date::-webkit-calendar-picker-indicator {
-    color: aliceblue;
+    color: black;
     border: 1px solid brown;
     background-color: transparent;
 }

@@ -10,7 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 </script>
 </head>
-<body onload="addBudget()">
+<body>
     <div class="index">
         <nav class="menu">
             <a class="menu_item1" href="./itinerary.html"> Itinerary</a>
@@ -21,9 +21,9 @@
         <div class="content" id="budget_content">
             <div class="budget_graph"> 
                 <canvas id="myChart"></canvas>
+                <div class="budget_entry"></div>
             </div>
             <div class="budget_items">
-                <button onclick="addBudget()" class="small_button">+ Add Entry</button>
                 <div id="budget_enter">
                     <div class="budget_catagory">
                         <label>Catagory</label>          
@@ -41,19 +41,15 @@
                     </div>
                     <div class="budget_catagory">
                         <label>Date</label>
-                        <input type="datetime-local" class="budget_date">
+                        <input type="date" class="budget_date">
                     </div>
                     <div class="budget_catagory">
                         <label>Label</label>
                         <textarea id="budget_label"></textarea>
                     </div>
                     <button class="budget_button small_button" onclick="AddBudgetItem()">Add Expense</button>
-                    <button class="budget_button small_button" onclick="addBudget()">Cancel</button>
                 </div>
                 <div id="budget_spacer"></div>
-                <div class="budget_entry">
-                    
-                </div>
             </div>
         </div>
     </div>
