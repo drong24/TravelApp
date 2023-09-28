@@ -21,7 +21,23 @@
         <div class="content" id="budget_content">
             <div class="budget_graph"> 
                 <canvas id="myChart"></canvas>
-                <div class="budget_entry"></div>
+                <div class="budget_entry">
+                    <div id="default_details">
+                        Click on a pie to show details!
+                    </div>
+                    <div id="lodging_details">
+                        <div>Lodging</div>
+                    </div>
+                    <div id="transportation_details">
+                        <div>Transportation</div>
+                    </div>
+                    <div id="food_details">
+                        <div>Food</div>
+                    </div>
+                    <div id="others_details">
+                        <div>Others</div>
+                    </div>
+                </div>
             </div>
             <div class="budget_items">
                 <div id="budget_enter">
@@ -81,27 +97,8 @@
             console.log(activeEls[0]);
             //let dsIndex = activeEls[0]._datasetIndex;
             //console.log(dsIndex);
-            let dataIndex = activeEls[0]._index;
-            let indexValue = (dataIndex == '0') ? 'Lodging' : 
-                (dataIndex == '1') ? 'Transportation' :
-                (dataIndex == '2') ? 'Food' : 'Others';
-            //console.log(dataIndex);
-            //console.log(budgetItems);
-            //console.log(budgetItems[0].catagory);
-
-            const amount = document.querySelector('.budget_amount').value;
-            const catagory = document.querySelector('.budget_catag').value;
-            const date = document.querySelector('.budget_date');
-            const label = document.getElementById('budget_label');
-            document.querySelector('.budget_entry').innerHTML = `<div>${indexValue}</div>`;
-
-            budgetItems.forEach(item => {
-                if(item.catagory == indexValue) {
-                    document.querySelector('.budget_entry').innerHTML += 
-                    `<div class="card"><p>${item.label}: $${item.amount}</p>
-                    <small class="dateTime">${item.date}</small></div>`
-                }
-            });
+            
+            showChartDetails(activeEls);
             
             /*
             let datasetLabel = chart.data.datasets[dsIndex] //e.chart.data.datasets[datasetIndex].label;
@@ -147,37 +144,91 @@
             inputAmount = parseFloat(parseFloat(amount).toFixed(2));
             BudgetCata.Transportation += inputAmount;
             budgetItems.push({catagory, label, amount, date});
-            //console.log(budgetItems);
+
+            document.getElementById('transportation_details').innerHTML += 
+            `<div class="card"><p>${label}: $${amount}</p>
+            <small class="dateTime">${date}</small></div>`
             break;
 
             case 'Lodging': 
             BudgetCata.Lodging += parseFloat(parseFloat(amount).toFixed(2));
             console.log(parseFloat(parseFloat(amount).toFixed(2)));
             budgetItems.push({catagory, label, amount, date});
+
+            document.getElementById('lodging_details').innerHTML += 
+            `<div class="card"><p>${label}: $${amount}</p>
+            <small class="dateTime">${date}</small></div>`
             break;
 
             case 'Others': 
             BudgetCata.Others += parseFloat(parseFloat(amount).toFixed(2));
             budgetItems.push({catagory, label, amount, date});
+
+            document.getElementById('others_details').innerHTML += 
+            `<div class="card"><p>${label}: $${amount}</p>
+            <small class="dateTime">${date}</small></div>`
             break;
 
             case 'Food': 
             BudgetCata.Food += parseFloat(parseFloat(amount).toFixed(2));
             budgetItems.push({catagory, label, amount, date});
+
+            document.getElementById('food_details').innerHTML += 
+            `<div class="card"><p>${label}: $${amount}</p>
+            <small class="dateTime">${date}</small></div>`
             break;
 
             default: 
             console.log('should not show');
         };
-
-        console.log(budgetItems);
-
-        amount.value = '';
-        catagory.value = '';
-        date.value = 'mm/dd/yyyy';
  
         chart.data.datasets[0].data = [BudgetCata.Lodging, BudgetCata.Transportation, BudgetCata.Food, BudgetCata.Others];
         chart.update();
+
+
+    }
+
+    function showChartDetails(a) {   
+        let dataIndex = a[0]._index;
+
+        document.getElementById('default_details').style.display = 'none';
+        document.getElementById('lodging_details').style.display = 'none';
+        document.getElementById('transportation_details').style.display = 'none';
+        document.getElementById('food_details').style.display = 'none';
+        document.getElementById('others_details').style.display = 'none';
+
+        if (dataIndex == '0') {
+            document.getElementById('lodging_details').style.display = 'block';
+        }
+        else if (dataIndex == '1') {
+            document.getElementById('transportation_details').style.display = 'block';
+        }
+        else if (dataIndex == '2') {
+            document.getElementById('food_details').style.display = 'block';
+        }
+        else {
+            document.getElementById('others_details').style.display = 'block';
+        }
+
+        /*
+            let indexValue = (dataIndex == '0') ? 'Lodging' : 
+                (dataIndex == '1') ? 'Transportation' :
+                (dataIndex == '2') ? 'Food' : 'Others';
+
+            const amount = document.querySelector('.budget_amount').value;
+            const catagory = document.querySelector('.budget_catag').value;
+            const date = document.querySelector('.budget_date');
+            const label = document.getElementById('budget_label');
+            document.querySelector('.budget_entry').innerHTML = `<div>${indexValue}</div>`;
+
+            budgetItems.forEach(item => {
+                if(item.catagory == indexValue) {
+                    document.querySelector('.budget_entry').innerHTML += 
+                    `<div class="card"><p>${item.label}: $${item.amount}</p>
+                    <small class="dateTime">${item.date}</small></div>`
+                }
+            });
+            */
     }
 
   </script>
