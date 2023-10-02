@@ -179,6 +179,9 @@ button:hover {
 }
 
 .entry_preview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border: 1px solid rgb(153, 76, 0, 0.8);
     padding: 5px;
     margin: 5px;
@@ -189,6 +192,11 @@ button:hover {
 
 .entry_preview:hover {
     background-color: rgba(153, 76, 0, 0.388);;
+}
+
+.delete_button {
+    width: 25px;
+    height: 25px;
 }
 
 #journal_note {

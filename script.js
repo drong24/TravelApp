@@ -145,7 +145,7 @@ function getRs() {
 function addText() {
     var list = document.getElementById('journal_list');
     var node = document.createElement('div');
-    let noteId = Math.floor(Math.random() * 1000000);
+    let noteId = 'n' + Math.floor(Math.random() * 1000000);
 
     node.classList.add('entry_preview', noteId);
 
@@ -191,10 +191,25 @@ function addText() {
         });
 
     });
-    var newText = `<p>New Entry</p><small class='datetime'>${new Date().toDateString()}</small>`;
+    var newText = `<div><p>New Entry</p><small class='datetime'>${new Date().toDateString()}</small></div><button class='small_button delete_button' onClick="deleteNote()">x</button>`;
     node.insertAdjacentHTML('beforeend', newText);
     list.insertBefore(node, list.firstChild);
+    
+    const buttons = document.querySelectorAll('.delete_button');
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const itemToDelete = document.querySelectorAll('.' + button.parentElement.classList[1]);
+            itemToDelete.forEach(item => {
+                item.remove();
+            });
+            //button.parentElement.remove();
+        })
+    });
+}
 
+function deleteNote() {
+    const buttons = document.querySelector('.delete_button');  
+    console.log('deleted!');
 }
 
 function addBudget() {
