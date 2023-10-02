@@ -276,7 +276,7 @@ function itineraryMode() {
     }
     else {
         calender.style.display = 'none';
-        entry.style.display = 'block';
+        entry.style.display = 'flex';
     }
 }
 
