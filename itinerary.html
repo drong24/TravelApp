@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./styles.css">
     <script src="./script.js" defer></script>
 </head>
-<body onload="onLoad()">
+<body onload="onLoad(), load()">
     <div class="index">
         <nav class="menu">
             <a class="menu_item1" href="./itinerary.html"> Itinerary</a>
@@ -24,14 +24,10 @@
                 <label>Address</label><textarea id="itin_address"></textarea>
                 <div class="itin_enter_buttons">
                     <button onclick="addItineraryItem()" class="small_button">Save</button>
-                    <button onclick="addItinerary()" class="small_button">Cancel</button>
                     <button onclick="load(), itineraryMode()" class="small_button">Mode</button>
                 </div>
             </div>
-            <div id = "itin_entry" class="itinerary_entry">
-                <div class="itin_entry_title">Add an Itinerary!</div>
-            </div>
-            <div id="itinerary_calender">
+            <div class="itinerary_display">
                 <div id="calender_header">
                     <div id="monthDisplay"></div>
                     <div id="nav_buttons">
@@ -39,17 +35,23 @@
                         <button  id="nextButton" class="small_button">Next</button>
                     </div>
                 </div>
-                <div id="weekdays">
-                    <div class="weekday">Sunday</div>
-                    <div class="weekday"> Monday</div>
-                    <div  class="weekday"v>Tuesday</div>
-                    <div  class="weekday">Wednesday</div>
-                    <div  class="weekday">Thursday</div>
-                    <div  class="weekday">Friday</div>
-                    <div  class="weekday">Saturday</div>
+                <div id = "itin_entry" class="itinerary_entry">
+                    <div class="itin_entry_title">Add an Itinerary!</div>
                 </div>
-                <div id="calender"></div>
+                <div id="itinerary_calender">
+                    <div id="weekdays">
+                        <div class="weekday">Sunday</div>
+                        <div class="weekday"> Monday</div>
+                        <div  class="weekday"v>Tuesday</div>
+                        <div  class="weekday">Wednesday</div>
+                        <div  class="weekday">Thursday</div>
+                        <div  class="weekday">Friday</div>
+                        <div  class="weekday">Saturday</div>
+                    </div>
+                    <div id="calender"></div>
+                </div>
             </div>
+
         </div>
     </div>
 </body>

@@ -16,7 +16,7 @@ function onLoad() {
 
 function load() {
     const dt = new Date();
-    console.log(dt);
+    //console.log(dt);
     if (nav !== 0) {
         dt.setMonth(new Date().getMonth() + nav);
         console.log(dt);
@@ -111,6 +111,28 @@ function load() {
                 day.lastChild.style.display = 'none';            });
         }
     })
+    let i = 1;
+    let dt2 = new Date(dt);
+    
+    document.querySelector('.itinerary_entry').innerHTML = "";
+    while (i <= daysInMonth) {
+        dt2.setDate(i);
+        document.querySelector('.itinerary_entry').innerHTML += `<p class="listDay">${dt.toLocaleDateString('en-us', {month: 'long'})} 
+        ${i} - ${weekdays[dt2.getDay()]}</p>`;
+
+        itin_items.forEach(element => {
+            if(dt2.getFullYear() == new Date(element.date).getFullYear() &&
+            dt2.getMonth() == new Date(element.date).getMonth() && 
+            dt2.getDate() == new Date(element.date).getDate()) {
+                document.querySelector('.itinerary_entry').innerHTML += 
+                `<div class="card"><p>${element.activity}</p>
+                <a href="https://maps.google.com/?q=${element.address}" target="_blank">${element.address}</a>`;
+            }
+        }); 
+        i++;
+    }
+    
+
 }
 
 function initButton() {
@@ -288,14 +310,10 @@ function addItineraryItem() {
     itin_items.sort(function(a, b) {
         return new Date(a.date) - new Date(b.date);
     });
-    itineraryList();
     load();
 
     getTxt('itin_activity').value = "";
     getTxt('itin_address').value = "";
-    var inputBox = getTxt('enter');
-    inputBox.style.display = 'none';
-    console.log(itin_items);
 
 }
 
