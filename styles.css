@@ -146,7 +146,7 @@ button:hover {
     animation-delay: .5s;
     animation-fill-mode: forwards;
     align-items: center;
-    width: auto;
+    width: 80%;
     height: fit-content;
     top: 22%;
 }
@@ -237,7 +237,7 @@ button:hover {
     height: 119.5px;
 }
 
-#budget_content {
+.budget_content {
 display: flex;
 flex-direction: row;
 height: 70%;
@@ -387,13 +387,9 @@ input:focus, textarea, select{
 
 /*itinerary*/
 .itinerary_enter {
-    position: absolute;
-    z-index: 1000;
-    background-color: papayawhip;
-    top: 40px;
-    left: 0;
-    width: 40%;
-    display: flex;
+    height: 100%;
+    width: 20%;
+    display: block;
     border: 1px solid rgb(0, 0, 0);
     padding: 15px;
     border-radius: 2px;
@@ -451,8 +447,8 @@ height: 25px;
     flex-direction: column;
     background-color: rgb(244, 164, 96, .15);
     font-size: small;
-    height: 415px;
-    width: 1009.59px;
+    height: 100%;
+    width: 80%;
     overflow: scroll;  
 }
 

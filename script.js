@@ -12,7 +12,6 @@ function onLoad() {
     let inputBox = document.getElementById('enter');
     
     calender.style.display = 'none';
-    inputBox.style.display = 'none';
 }
 
 function load() {

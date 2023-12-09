@@ -16,9 +16,7 @@
             <a class="menu_item3" href="./budget.html">Budget</a>
         </nav>
             <a class="title" href="./index.html">TravelApp</a>
-        <div class="content">
-            <button onclick="addItinerary()" class="small_button">+ Add Entry</button>
-            <button onclick="itineraryMode();load();" class="small_button">Mode</button>
+        <div class="content budget_content">
             <div id="enter" class="itinerary_enter">
                 <label id="itin_enter_title">Add an Event</label>
                 <label>Date</label><input id="itin_date" type="datetime-local" class="budget_date">
@@ -27,6 +25,7 @@
                 <div class="itin_enter_buttons">
                     <button onclick="addItineraryItem()" class="small_button">Save</button>
                     <button onclick="addItinerary()" class="small_button">Cancel</button>
+                    <button onclick="load(), itineraryMode()" class="small_button">Mode</button>
                 </div>
             </div>
             <div id = "itin_entry" class="itinerary_entry">
