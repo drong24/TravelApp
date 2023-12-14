@@ -75,9 +75,9 @@ function load() {
             day.innerHTML == new Date(activity.date).getDate()) {
                 eventNum++;
                 hoverEvent.innerHTML += 
-                `<div><p style="text-decoration:underline; font-size:16px";>${activity.activity}</p> 
+                `<div style="color: white;">
                 <a href="https://maps.google.com/?q=${activity.address}" target="_blank" 
-                style="font-size:13px" >${activity.address}</a></div>`
+                style="font-size:13px" >${activity.activity}</a></div>`
 
                 //console.log(hoverEvent);
                 //console.log('!!');
